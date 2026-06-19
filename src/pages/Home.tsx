@@ -31,10 +31,10 @@ export const Home = () => {
   return (
     <div className="space-y-20 pb-20">
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center overflow-hidden bg-[#F5F5F5] dark:bg-zinc-900">
+      <section className="relative h-[85vh] flex items-center overflow-hidden bg-[#B8E0F7] dark:bg-zinc-900">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://picsum.photos/seed/hero/1920/1080?blur=2"
+            src="/grocery-shop.webp"
             alt="Hero"
             className="w-full h-full object-cover opacity-40 dark:opacity-20"
             referrerPolicy="no-referrer"
@@ -49,21 +49,21 @@ export const Home = () => {
             className="max-w-2xl"
           >
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#666666] dark:text-zinc-400 mb-4">
-              Signature Scents 2026
+              Fresh Essentials
             </p>
             <h1 className="text-6xl md:text-8xl font-serif font-bold leading-[0.9] mb-8 dark:text-white">
-              Luxury for <br />
-              <span className="italic text-accent-dark">Every Budget</span>
+              Everyday groceries <br />
+              <span className="italic text-accent-dark">at great value</span>
             </h1>
             <p className="text-lg text-[#666666] dark:text-zinc-400 mb-10 max-w-lg">
-              Discover premium fragrances without the premium price tag. Curated scents from around the world, delivered to your doorstep.
+              Discover quality food and household essentials, delivered right to your doorstep.
             </p>
             <div className="flex gap-4">
               <Link to="/products">
-                <Button size="lg">Explore Scents</Button>
+                <Button size="lg">Shop Groceries</Button>
               </Link>
               <Link to="/categories">
-                <Button variant="outline" size="lg">Collections</Button>
+                <Button variant="outline" size="lg">Browse Categories</Button>
               </Link>
             </div>
           </motion.div>
@@ -74,9 +74,9 @@ export const Home = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
-            { icon: Truck, title: 'Country-wide Delivery', desc: 'Fast and secure delivery to all parts of Ghana.' },
-            { icon: ShieldCheck, title: 'Secure Payment', desc: 'Your transactions are protected by industry-leading encryption.' },
-            { icon: Star, title: 'Premium Quality', desc: 'Every piece is handpicked for its superior materials and design.' },
+            { icon: Truck, title: 'Fast Delivery', desc: 'Quick delivery to your home, office, or neighborhood.' },
+            { icon: ShieldCheck, title: 'Safe Checkout', desc: 'Your transactions are protected with secure payment options.' },
+            { icon: Star, title: 'Fresh Quality', desc: 'Every item is carefully selected for freshness, quality, and value.' },
           ].map((feature, i) => (
             <motion.div
               key={i}
@@ -100,8 +100,8 @@ export const Home = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="text-3xl font-sans font-bold mb-2 dark:text-white">Curated Collections</h2>
-            <p className="text-[#666666] dark:text-zinc-400">Find exactly what you're looking for.</p>
+            <h2 className="text-3xl font-sans font-bold mb-2 dark:text-white">Popular Categories</h2>
+            <p className="text-[#666666] dark:text-zinc-400">Find fresh picks for every meal and every home.</p>
           </div>
           {categories.length > 0 && (
             <Link to="/categories" className="text-sm font-bold uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all dark:text-zinc-300">
@@ -112,7 +112,7 @@ export const Home = () => {
 
         {categories.length === 0 ? (
           <div className="bg-[#FDFBFB] dark:bg-zinc-950 p-8 rounded-[2.5rem] border border-[#F5F5F5] dark:border-zinc-800 flex justify-center items-center h-[300px]">
-            <EmptyState icon={<Star className="w-10 h-10 text-[#999999]" />} title="No Collections Available" description="Check back later for new curated collections." />
+            <EmptyState icon={<Star className="w-10 h-10 text-[#999999]" />} title="No Categories Available" description="Check back later for fresh grocery picks." />
           </div>
         ) : (
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
@@ -120,7 +120,7 @@ export const Home = () => {
               <Link
                 key={cat.categoryId}
                 to={`/products?category=${cat.categoryId}`}
-                className="group relative aspect-square overflow-hidden rounded-2xl bg-[#F5F5F5] dark:bg-zinc-900"
+                className="group relative aspect-square overflow-hidden rounded-2xl bg-[#B8E0F7] dark:bg-zinc-900"
               >
                 <img
                   src={`https://picsum.photos/seed/${cat.slug}/800/800`}
@@ -142,19 +142,19 @@ export const Home = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="text-3xl font-sans font-bold mb-2 dark:text-white">Featured Pieces</h2>
-            <p className="text-[#666666] dark:text-zinc-400">Our most loved items this season.</p>
+            <h2 className="text-3xl font-sans font-bold mb-2 dark:text-white">Best Sellers</h2>
+            <p className="text-[#666666] dark:text-zinc-400">Our most loved staples this week.</p>
           </div>
           {featuredProducts.length > 0 && (
             <Link to="/products" className="text-sm font-bold uppercase tracking-wider flex items-center gap-2 hover:gap-3 transition-all dark:text-zinc-300">
-              View Collection <ArrowRight className="h-4 w-4" />
+              View All Products <ArrowRight className="h-4 w-4" />
             </Link>
           )}
         </div>
 
         {featuredProducts.length === 0 ? (
           <div className="bg-[#FDFBFB] dark:bg-zinc-950 p-8 rounded-[2.5rem] border border-[#F5F5F5] dark:border-zinc-800 flex justify-center items-center h-[300px]">
-            <EmptyState icon={<Star className="w-10 h-10 text-[#999999]" />} title="No Products Available" description="Check back later for new featured pieces." />
+            <EmptyState icon={<Star className="w-10 h-10 text-[#999999]" />} title="No Products Available" description="Check back later for new grocery picks." />
           </div>
         ) : (
           <FeaturedCarousel products={featuredProducts} />
@@ -168,9 +168,9 @@ export const Home = () => {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-sans font-bold mb-6">Join Our Olfactory Circle</h2>
+            <h2 className="text-4xl md:text-5xl font-sans font-bold mb-6">Community of Savers</h2>
             <p className="text-[#666666] mb-10">
-              Subscribe to our newsletter for exclusive access to new releases, private sales, and expert fragrance guidance.
+              Subscribe to our newsletter for weekly deals, fresh arrivals, and helpful grocery tips.
             </p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
               <input

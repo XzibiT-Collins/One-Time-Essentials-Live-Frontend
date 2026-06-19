@@ -74,7 +74,7 @@ export function AdminTable<T>({
             <input
               type="text"
               placeholder={searchPlaceholder}
-              className="w-full pl-10 pr-4 py-2 bg-[#F5F5F5] dark:bg-zinc-800 border-none rounded-xl text-sm focus:ring-1 focus:ring-[#1A1A1A] dark:focus:ring-accent dark:text-white"
+              className="w-full pl-10 pr-4 py-2 bg-[#B8E0F7] dark:bg-zinc-800 border-none rounded-xl text-sm focus:ring-1 focus:ring-[#1A1A1A] dark:focus:ring-accent dark:text-white"
               onChange={(e) => {
                 if (onSearch) onSearch(e.currentTarget.value);
               }}
@@ -109,7 +109,7 @@ export function AdminTable<T>({
               Array.from({ length: 3 }).map((_, i) => (
                 <tr key={i}>
                   <td colSpan={columns.length + 1} className="px-8 py-4">
-                    <div className="h-5 bg-[#F5F5F5] dark:bg-zinc-800 rounded animate-pulse" />
+                    <div className="h-5 bg-[#B8E0F7] dark:bg-zinc-800 rounded animate-pulse" />
                   </td>
                 </tr>
               ))

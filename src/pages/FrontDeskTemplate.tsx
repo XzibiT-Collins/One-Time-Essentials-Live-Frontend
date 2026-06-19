@@ -84,7 +84,7 @@ export const FrontDeskTemplate = () => {
         <div className="flex items-center gap-4">
           <button 
             onClick={() => navigate('/admin/front-desk')}
-            className="p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 rounded-full transition-colors"
+            className="p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 rounded-full transition-colors"
           >
             <ArrowLeft className="h-6 w-6 dark:text-white" />
           </button>
@@ -137,7 +137,7 @@ export const FrontDeskTemplate = () => {
         )}
       </div>
 
-      <div className="bg-zinc-50 dark:bg-zinc-950/50 rounded-3xl p-8 border border-dashed border-[#E5E5E5] dark:border-zinc-800">
+      <div className="bg-zinc-50 dark:bg-zinc-950/50 rounded-3xl p-8 border border-dashed border-[#72BEE8] dark:border-zinc-800">
         <p className="text-sm text-[#666666] dark:text-zinc-400 leading-relaxed">
           <span className="font-bold text-accent-dark dark:text-accent">Note:</span> These permissions are applied to all staff members whose roles are set to Front Desk, unless they have specific user-level overrides. Changing the template will immediately affect all such users.
         </p>

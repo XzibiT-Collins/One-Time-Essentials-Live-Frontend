@@ -94,18 +94,18 @@ export const Navbar = () => {
   return (
     <>
       {/* ── Main Navbar ── */}
-      <nav className="sticky top-0 z-50 glass border-b border-[#E5E5E5] dark:border-zinc-800">
+      <nav className="sticky top-0 z-50 glass border-b border-[#72BEE8] dark:border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
 
             {/* Logo + desktop nav links */}
             <div className="flex items-center gap-8">
               <Link to="/" className="text-xl font-sans font-bold tracking-tight text-zinc-900 dark:text-white">
-                PERFUME<span className="font-sans font-light text-accent-dark">BUDGET</span>
+                ONE TIME<span className="font-sans font-light text-accent-dark">ESSENTIALS</span>
               </Link>
               <div className="hidden md:flex items-center gap-6 text-sm font-medium text-[#666666] dark:text-zinc-400">
-                <Link to="/products" className="hover:text-accent-dark transition-colors">Fragrances</Link>
-                <Link to="/categories" className="hover:text-accent-dark transition-colors">Collections</Link>
+                <Link to="/products" className="hover:text-accent-dark transition-colors">Groceries</Link>
+                <Link to="/categories" className="hover:text-accent-dark transition-colors">Categories</Link>
               </div>
             </div>
 
@@ -117,11 +117,11 @@ export const Navbar = () => {
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999]" />
                   <input
                     type="text"
-                    placeholder="Find your scent..."
+                    placeholder="Search products..."
                     value={searchTerm}
                     onChange={(e) => { setSearchTerm(e.target.value); setShowDropdown(true); }}
                     onFocus={() => setShowDropdown(true)}
-                    className="pl-10 pr-10 py-1.5 bg-[#F5F5F5] dark:bg-zinc-900 rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-accent w-48 transition-all focus:w-72 border border-[#E5E5E5] dark:border-zinc-800 text-zinc-900 dark:text-white"
+                    className="pl-10 pr-10 py-1.5 bg-[#B8E0F7] dark:bg-zinc-900 rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-accent w-48 transition-all focus:w-72 border border-[#72BEE8] dark:border-zinc-800 text-zinc-900 dark:text-white"
                   />
                   {isSearching && (
                     <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 animate-spin text-accent-dark" />
@@ -134,7 +134,7 @@ export const Navbar = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-zinc-900 rounded-2xl border border-[#E5E5E5] dark:border-zinc-800 shadow-2xl overflow-hidden min-w-[320px]"
+                      className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-zinc-900 rounded-2xl border border-[#72BEE8] dark:border-zinc-800 shadow-2xl overflow-hidden min-w-[320px]"
                     >
                       <div className="p-2">
                         {isSearching && searchResults.length === 0 ? (
@@ -146,9 +146,9 @@ export const Navbar = () => {
                               <button
                                 key={product.productId}
                                 onClick={() => handleProductClick(product.slug || '')}
-                                className="w-full flex items-center gap-3 p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 rounded-xl transition-colors text-left group"
+                                className="w-full flex items-center gap-3 p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 rounded-xl transition-colors text-left group"
                               >
-                                <div className="h-12 w-12 rounded-lg bg-[#F5F5F5] dark:bg-zinc-800 overflow-hidden shrink-0">
+                                <div className="h-12 w-12 rounded-lg bg-[#B8E0F7] dark:bg-zinc-800 overflow-hidden shrink-0">
                                   {product.productImageUrl ? (
                                     <img src={product.productImageUrl} alt={product.productName} className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                   ) : (
@@ -170,7 +170,7 @@ export const Navbar = () => {
                           </>
                         ) : (
                           <div className="px-4 py-8 text-center">
-                            <p className="text-sm text-[#666666] dark:text-zinc-400">No fragrances found for "{searchTerm}"</p>
+                            <p className="text-sm text-[#666666] dark:text-zinc-400">No products found for "{searchTerm}"</p>
                             <p className="text-xs text-[#999999] mt-1">Try a different keyword</p>
                           </div>
                         )}
@@ -197,7 +197,7 @@ export const Navbar = () => {
               </button>
 
               {user ? (
-                <div className="flex items-center gap-2 border-l border-[#E5E5E5] dark:border-zinc-800 pl-4">
+                <div className="flex items-center gap-2 border-l border-[#72BEE8] dark:border-zinc-800 pl-4">
                   {user.role === UserRole.ADMIN || user.role === UserRole.FRONT_DESK ? (
                     <Link to={getAdminHomePath(user)}>
                       <Button variant="ghost" size="icon" title={user.role === UserRole.FRONT_DESK ? 'Walk-In Orders' : 'Admin Dashboard'}>
@@ -227,7 +227,7 @@ export const Navbar = () => {
             <div className="md:hidden flex items-center gap-1">
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors"
+                className="p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors"
                 aria-label="Search"
               >
                 <Search className="h-5 w-5" />
@@ -272,7 +272,7 @@ export const Navbar = () => {
               className="fixed top-0 left-0 right-0 z-[70] bg-white dark:bg-zinc-950 shadow-2xl rounded-b-2xl mx-2 mt-2 overflow-hidden"
             >
               {/* Input row */}
-              <form onSubmit={handleSearchSubmit} className="flex items-center gap-3 px-4 py-3 border-b border-[#E5E5E5] dark:border-zinc-800">
+              <form onSubmit={handleSearchSubmit} className="flex items-center gap-3 px-4 py-3 border-b border-[#72BEE8] dark:border-zinc-800">
                 {isSearching ? (
                   <Loader2 className="h-5 w-5 shrink-0 animate-spin text-accent-dark" />
                 ) : (
@@ -281,7 +281,7 @@ export const Navbar = () => {
                 <input
                   ref={mobileSearchInputRef}
                   type="text"
-                  placeholder="Search fragrances..."
+                  placeholder="Search products..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="flex-1 bg-transparent text-sm text-zinc-900 dark:text-white placeholder:text-[#999999] focus:outline-none"
@@ -289,7 +289,7 @@ export const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setIsSearchOpen(false)}
-                  className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-white hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors shrink-0"
+                  className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-white hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors shrink-0"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -313,9 +313,9 @@ export const Navbar = () => {
                           <button
                             key={product.productId}
                             onClick={() => handleProductClick(product.slug || '')}
-                            className="w-full flex items-center gap-3 p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 rounded-xl transition-colors text-left group"
+                            className="w-full flex items-center gap-3 p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 rounded-xl transition-colors text-left group"
                           >
-                            <div className="h-12 w-12 rounded-lg bg-[#F5F5F5] dark:bg-zinc-800 overflow-hidden shrink-0">
+                            <div className="h-12 w-12 rounded-lg bg-[#B8E0F7] dark:bg-zinc-800 overflow-hidden shrink-0">
                               {product.productImageUrl ? (
                                 <img src={product.productImageUrl} alt={product.productName} className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-500" />
                               ) : (
@@ -340,7 +340,7 @@ export const Navbar = () => {
                       </>
                     ) : (
                       <div className="px-4 py-8 text-center">
-                        <p className="text-sm text-[#666666] dark:text-zinc-400">No fragrances found for "{searchTerm}"</p>
+                        <p className="text-sm text-[#666666] dark:text-zinc-400">No products found for "{searchTerm}"</p>
                         <p className="text-xs text-[#999999] mt-1">Try a different keyword</p>
                       </div>
                     )}
@@ -377,11 +377,11 @@ export const Navbar = () => {
               className="fixed top-0 right-0 z-[70] h-full w-[80%] max-w-xs bg-white dark:bg-zinc-950 shadow-2xl flex flex-col"
             >
               {/* Drawer header */}
-              <div className="flex items-center justify-between px-5 py-5 border-b border-[#E5E5E5] dark:border-zinc-800">
+              <div className="flex items-center justify-between px-5 py-5 border-b border-[#72BEE8] dark:border-zinc-800">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#999999]">Menu</span>
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-white hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors"
+                  className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-white hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -389,10 +389,10 @@ export const Navbar = () => {
 
               {/* Nav links */}
               <nav className="flex-1 overflow-y-auto px-5 py-6 space-y-1">
-                <Link to="/products" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors">
+                <Link to="/products" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors">
                   Shop All
                 </Link>
-                <Link to="/categories" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors">
+                <Link to="/categories" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors">
                   Collections
                 </Link>
 
@@ -401,12 +401,12 @@ export const Navbar = () => {
                 {user ? (
                   <>
                     {user.role === UserRole.ADMIN || user.role === UserRole.FRONT_DESK ? (
-                      <Link to={getAdminHomePath(user)} onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors">
+                      <Link to={getAdminHomePath(user)} onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors">
                         <LayoutDashboard className="h-4 w-4" />
                         {user.role === UserRole.FRONT_DESK ? 'Walk-In Orders' : 'Admin Dashboard'}
                       </Link>
                     ) : (
-                      <Link to="/profile" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors">
+                      <Link to="/profile" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors">
                         <UserIcon className="h-4 w-4" />
                         My Profile
                       </Link>
@@ -418,7 +418,7 @@ export const Navbar = () => {
                   </>
                 ) : (
                   <>
-                    <Link to="/login" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors">
+                    <Link to="/login" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-200 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors">
                       Login
                     </Link>
                     <Link to="/register" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-accent-dark hover:bg-accent/5 dark:hover:bg-accent/10 transition-colors">
@@ -429,10 +429,10 @@ export const Navbar = () => {
               </nav>
 
               {/* Theme toggle — pinned to bottom of drawer */}
-              <div className="px-5 py-4 border-t border-[#E5E5E5] dark:border-zinc-800">
+              <div className="px-5 py-4 border-t border-[#72BEE8] dark:border-zinc-800">
                 <button
                   onClick={toggleTheme}
-                  className="flex items-center gap-3 w-full px-3 py-3 rounded-xl text-sm font-semibold text-zinc-600 dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors"
+                  className="flex items-center gap-3 w-full px-3 py-3 rounded-xl text-sm font-semibold text-zinc-600 dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors"
                 >
                   {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                   {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}

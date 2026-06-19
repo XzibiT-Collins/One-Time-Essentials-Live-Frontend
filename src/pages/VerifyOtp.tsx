@@ -121,7 +121,7 @@ export const VerifyOtp = () => {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="min-h-screen flex items-center justify-center bg-[#F5F5F5] dark:bg-zinc-950 px-4"
+            className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4"
         >
             <div className="w-full max-w-md">
                 <div className="text-center mb-10">
@@ -155,7 +155,7 @@ export const VerifyOtp = () => {
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="you@example.com"
                                     required
-                                    className="w-full px-4 py-2.5 rounded-xl border border-[#E5E5E5] dark:border-zinc-700 bg-transparent text-[#1A1A1A] dark:text-white focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
+                                    className="w-full px-4 py-2.5 rounded-xl border border-[#72BEE8] dark:border-zinc-700 bg-transparent text-[#1A1A1A] dark:text-white focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
                                 />
                             </div>
                         )}
@@ -176,7 +176,7 @@ export const VerifyOtp = () => {
                                         value={digit}
                                         onChange={(e) => handleChange(i, e.target.value)}
                                         onKeyDown={(e) => handleKeyDown(i, e)}
-                                        className="w-12 h-14 text-center text-xl font-bold rounded-xl border border-[#E5E5E5] dark:border-zinc-700 bg-transparent text-[#1A1A1A] dark:text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
+                                        className="w-12 h-14 text-center text-xl font-bold rounded-xl border border-[#72BEE8] dark:border-zinc-700 bg-transparent text-[#1A1A1A] dark:text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                                         autoFocus={i === 0}
                                     />
                                 ))}

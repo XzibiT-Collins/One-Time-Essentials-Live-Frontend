@@ -53,13 +53,13 @@ export const AdminSidebar = () => {
 
   return (
     <aside className={cn(
-      "bg-white dark:bg-zinc-950 border-r border-[#E5E5E5] dark:border-zinc-800 h-[calc(100vh-64px)] sticky top-16 hidden lg:flex flex-col overflow-hidden transition-all duration-300",
+      "bg-white dark:bg-zinc-950 border-r border-[#72BEE8] dark:border-zinc-800 h-[calc(100vh-64px)] sticky top-16 hidden lg:flex flex-col overflow-hidden transition-all duration-300",
       isCollapsed ? "w-20" : "w-64"
     )}>
       <div className="p-4 flex justify-end">
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900 rounded-xl transition-colors"
+          className="p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900 rounded-xl transition-colors"
         >
           {isCollapsed ? <Menu className="h-5 w-5" /> : <X className="h-5 w-5" />}
         </button>
@@ -82,7 +82,7 @@ export const AdminSidebar = () => {
                   'flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200',
                   isActive 
                     ? 'bg-accent text-[#1A1A1A] font-bold shadow-sm' 
-                    : 'text-[#666666] dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900 hover:text-[#1A1A1A] dark:hover:text-white',
+                    : 'text-[#666666] dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900 hover:text-[#1A1A1A] dark:hover:text-white',
                   isCollapsed ? "justify-center" : "justify-between"
                 )}
                 title={isCollapsed ? item.label : undefined}

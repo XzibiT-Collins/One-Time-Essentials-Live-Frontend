@@ -64,7 +64,7 @@ export const ProductPicker = ({ selected, onSelect, placeholder = 'Search produc
             {label}
           </label>
         )}
-        <div className="flex items-center justify-between gap-3 rounded-xl border border-[#E5E5E5] dark:border-zinc-800 bg-[#F5F5F5] dark:bg-zinc-800/50 px-4 py-2.5">
+        <div className="flex items-center justify-between gap-3 rounded-xl border border-[#72BEE8] dark:border-zinc-800 bg-[#B8E0F7] dark:bg-zinc-800/50 px-4 py-2.5">
           <div className="flex items-center gap-3 min-w-0">
             {selected.productImageUrl ? (
               <img src={selected.productImageUrl} alt="" className="h-9 w-9 rounded-lg object-cover shrink-0" />
@@ -106,7 +106,7 @@ export const ProductPicker = ({ selected, onSelect, placeholder = 'Search produc
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => results.length > 0 && setShowResults(true)}
           placeholder={placeholder}
-          className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-[#E5E5E5] dark:border-zinc-800 bg-white dark:bg-zinc-900 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent-dark/40"
+          className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-[#72BEE8] dark:border-zinc-800 bg-white dark:bg-zinc-900 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent-dark/40"
         />
         {isSearching && (
           <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999] animate-spin" />
@@ -120,7 +120,7 @@ export const ProductPicker = ({ selected, onSelect, placeholder = 'Search produc
                   key={p.productId}
                   type="button"
                   onClick={() => pick(p)}
-                  className="flex items-center gap-3 w-full p-3 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors text-left"
+                  className="flex items-center gap-3 w-full p-3 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors text-left"
                 >
                   {p.productImageUrl ? (
                     <img src={p.productImageUrl} alt="" className="h-9 w-9 rounded-lg object-cover shrink-0" />

@@ -2,24 +2,24 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-zinc-950 border-t border-[#E5E5E5] dark:border-zinc-800 pt-16 pb-8">
+    <footer className="bg-white dark:bg-zinc-950 border-t border-[#72BEE8] dark:border-zinc-800 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="text-xl font-sans font-bold tracking-tight mb-4 block dark:text-white">
-              PERFUME<span className="font-sans font-light text-accent-dark">BUDGET</span>
+              ONE TIME<span className="font-sans font-light text-accent-dark">ESSENTIALS</span>
             </Link>
             <p className="text-sm text-[#666666] dark:text-zinc-400 max-w-xs">
-              Premium fragrances at budget-friendly prices. Discover your signature scent with our curated collection of luxury perfumes.
+              Fresh groceries and household essentials delivered to your door.
             </p>
           </div>
           
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-4 dark:text-zinc-300">Fragrances</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-4 dark:text-zinc-300">Shop</h4>
             <ul className="space-y-2 text-sm text-[#666666] dark:text-zinc-400">
               <li><Link to="/products" className="hover:text-accent-dark">New Arrivals</Link></li>
               <li><Link to="/products" className="hover:text-accent-dark">Best Sellers</Link></li>
-              <li><Link to="/products" className="hover:text-accent-dark">Sale</Link></li>
+              <li><Link to="/products" className="hover:text-accent-dark">Deals</Link></li>
             </ul>
           </div>
 
@@ -43,7 +43,7 @@ export const Footer = () => {
         
         <div className="border-t border-[#F5F5F5] dark:border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[#999999] dark:text-zinc-500">
-            © {new Date().getFullYear()} Perfume Budget. All rights reserved.
+            © {new Date().getFullYear()} One Time Essentials. All rights reserved.
           </p>
           <div className="flex gap-6">
             {/* Social icons could go here */}

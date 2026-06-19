@@ -52,10 +52,10 @@ export const Cart = () => {
         <ShoppingBag className="h-16 w-16 text-[#CCCCCC] mb-6" />
         <h2 className="text-2xl font-sans font-bold dark:text-white mb-2">Your cart is empty</h2>
         <p className="text-[#666666] dark:text-zinc-400 mb-8">
-          Discover our curated collection of fragrances.
+          Browse fresh grocery picks.
         </p>
         <Link to="/products">
-          <Button size="lg">Explore Collection</Button>
+          <Button size="lg">Shop Groceries</Button>
         </Link>
       </div>
     );
@@ -78,7 +78,7 @@ export const Cart = () => {
                 exit={{ opacity: 0, x: -20 }}
                 className="flex gap-4 bg-white dark:bg-zinc-900 rounded-2xl p-4 card-shadow"
               >
-                <div className="w-20 h-24 shrink-0 rounded-xl overflow-hidden bg-[#F5F5F5] dark:bg-zinc-800">
+                <div className="w-20 h-24 shrink-0 rounded-xl overflow-hidden bg-[#B8E0F7] dark:bg-zinc-800">
                   {item.imageUrl ? (
                     <img
                       src={item.imageUrl}
@@ -113,7 +113,7 @@ export const Cart = () => {
                     )}
                   </div>
                   <div className="flex items-center justify-between mt-auto">
-                    <div className="flex items-center gap-2 bg-[#F5F5F5] dark:bg-zinc-800 rounded-xl p-1">
+                    <div className="flex items-center gap-2 bg-[#B8E0F7] dark:bg-zinc-800 rounded-xl p-1">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         className="h-7 w-7 flex items-center justify-center rounded-lg hover:bg-white dark:hover:bg-zinc-700 transition-colors"
@@ -161,7 +161,7 @@ export const Cart = () => {
                 <span>- {formatPrice(parsePrice(formattedOriginal) - subtotal)}</span>
               </div>
             )}
-            <div className="h-px bg-[#F5F5F5] dark:bg-zinc-800" />
+            <div className="h-px bg-[#B8E0F7] dark:bg-zinc-800" />
             <div className="flex justify-between font-bold text-base dark:text-white">
               <span>Total</span>
               <span>{formattedSubtotal}</span>

@@ -139,8 +139,8 @@ export const ShopWideDiscountManagement = () => {
 
             {isLoading ? (
               <div className="animate-pulse space-y-4">
-                <div className="h-16 bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl" />
-                <div className="h-24 bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl" />
+                <div className="h-16 bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl" />
+                <div className="h-24 bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl" />
               </div>
             ) : currentDiscount ? (
               <div className="space-y-6">

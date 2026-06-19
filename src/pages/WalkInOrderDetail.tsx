@@ -91,7 +91,7 @@ export const WalkInOrderDetail = () => {
             <body>
                 <div class="receipt-content">
                     <div class="header">
-                        <h1>PERFUME BUDGET</h1>
+                        <h1>One Time Essentials</h1>
                         <div class="sub">IN-STORE PURCHASE</div>
                     </div>
 
@@ -137,7 +137,7 @@ export const WalkInOrderDetail = () => {
                 <div class="footer">
                     <p>Thank you for your purchase!</p>
                     <p>Please keep this receipt for your records.</p>
-                    <p>${new Date().getFullYear()} Perfume Budget</p>
+                    <p>${new Date().getFullYear()} One Time Essentials</p>
                 </div>
                 <script>
                     window.onload = function() { 
@@ -246,7 +246,7 @@ export const WalkInOrderDetail = () => {
                             {order.items.map((item, i) => (
                                 <div key={i} className="flex justify-between items-center py-4 border-b border-[#F5F5F5] dark:border-zinc-800 last:border-0">
                                     <div className="flex gap-4">
-                                        <div className="h-16 w-16 bg-[#F5F5F5] dark:bg-zinc-800 rounded-xl flex items-center justify-center">
+                                        <div className="h-16 w-16 bg-[#B8E0F7] dark:bg-zinc-800 rounded-xl flex items-center justify-center">
                                             <Package className="h-6 w-6 text-[#999999]" />
                                         </div>
                                         <div>

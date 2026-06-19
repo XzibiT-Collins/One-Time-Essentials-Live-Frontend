@@ -96,17 +96,17 @@ export const AdminNavbar = () => {
 
   return (
     <>
-      <nav className="h-16 bg-white dark:bg-zinc-950 border-b border-[#E5E5E5] dark:border-zinc-800 sticky top-0 z-50 px-4 md:px-8 flex items-center justify-between">
+      <nav className="h-16 bg-white dark:bg-zinc-950 border-b border-[#72BEE8] dark:border-zinc-800 sticky top-0 z-50 px-4 md:px-8 flex items-center justify-between">
         <div className="flex items-center gap-4 md:gap-8">
           <button
             onClick={() => setIsMobileMenuOpen(true)}
-            className="lg:hidden p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900 rounded-xl transition-colors"
+            className="lg:hidden p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900 rounded-xl transition-colors"
           >
             <Menu className="h-5 w-5 dark:text-white" />
           </button>
 
           <Link to="/" className="text-xl font-sans font-bold tracking-tight text-zinc-900 dark:text-white">
-            PERFUME<span className="font-sans font-light text-accent-dark">BUDGET</span>
+            ONE TIME<span className="font-sans font-light text-accent-dark">ESSENTIALS</span>
             <span className="ml-2 text-[10px] bg-accent text-[#1A1A1A] px-2 py-0.5 rounded-full uppercase tracking-widest font-sans font-bold">Admin</span>
           </Link>
 
@@ -117,7 +117,7 @@ export const AdminNavbar = () => {
           <div className="hidden sm:block">
             <button
               onClick={toggleTheme}
-              className="p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900 rounded-xl transition-colors text-zinc-600 dark:text-zinc-400 hover:text-accent-dark"
+              className="p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900 rounded-xl transition-colors text-zinc-600 dark:text-zinc-400 hover:text-accent-dark"
               title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -127,7 +127,7 @@ export const AdminNavbar = () => {
           <div className="relative" ref={notificationsRef}>
             <button
               onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
-              className="p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900 rounded-xl transition-colors relative"
+              className="p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900 rounded-xl transition-colors relative"
             >
               <Bell className="h-5 w-5 text-[#666666] dark:text-zinc-400" />
               {unreadCount > 0 && (
@@ -173,7 +173,7 @@ export const AdminNavbar = () => {
                             if (!notif.read) markAsRead(notif.recipientId);
                           }}
                           className={cn(
-                            "block px-4 py-3 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors border-b border-[#F5F5F5] dark:border-zinc-800 last:border-0",
+                            "block px-4 py-3 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors border-b border-[#F5F5F5] dark:border-zinc-800 last:border-0",
                             !notif.read && "bg-accent/5 dark:bg-accent/10"
                           )}
                         >
@@ -237,7 +237,7 @@ export const AdminNavbar = () => {
           <div className="relative" ref={profileRef}>
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="flex items-center gap-3 p-1.5 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900 rounded-xl transition-colors"
+              className="flex items-center gap-3 p-1.5 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900 rounded-xl transition-colors"
             >
               <div className="h-8 w-8 rounded-lg bg-accent flex items-center justify-center text-[#1A1A1A] font-bold text-xs">
                 {user?.fullName?.split(' ').map(n => n[0]).join('').toUpperCase() || 'AD'}
@@ -257,19 +257,19 @@ export const AdminNavbar = () => {
                   <p className="text-sm font-bold dark:text-white">{user?.fullName}</p>
                   <p className="text-xs text-[#999999]">{user?.email}</p>
                 </div>
-                <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-[#666666] dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors">
+                <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-[#666666] dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors">
                   <User className="h-4 w-4" />
                   Profile Settings
                 </button>
                 <Link 
                   to="/admin/settings"
                   onClick={() => setIsProfileOpen(false)}
-                  className="w-full flex items-center gap-3 px-4 py-2 text-sm text-[#666666] dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors"
+                  className="w-full flex items-center gap-3 px-4 py-2 text-sm text-[#666666] dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors"
                 >
                   <Settings className="h-4 w-4" />
                   Store Settings
                 </Link>
-                <div className="h-px bg-[#F5F5F5] dark:bg-zinc-800 my-2" />
+                <div className="h-px bg-[#B8E0F7] dark:bg-zinc-800 my-2" />
                 <button
                   onClick={logout}
                   className="w-full flex items-center gap-3 px-4 py-2 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors"
@@ -293,7 +293,7 @@ export const AdminNavbar = () => {
           <div className="absolute left-0 top-0 h-full w-64 bg-white dark:bg-zinc-950 shadow-2xl flex flex-col animate-in slide-in-from-left duration-300">
             <div className="p-6 border-b border-[#F5F5F5] dark:border-zinc-800 flex items-center justify-between">
               <Link to="/" className="text-lg font-sans font-bold dark:text-white">
-                PERFUME<span className="font-sans font-light text-accent-dark">BUDGET</span>
+                ONE TIME<span className="font-sans font-light text-accent-dark">ESSENTIALS</span>
               </Link>
               <button onClick={() => setIsMobileMenuOpen(false)}>
                 <X className="h-5 w-5 dark:text-white" />
@@ -312,7 +312,7 @@ export const AdminNavbar = () => {
                         'flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all',
                         isActive
                           ? 'bg-accent text-[#1A1A1A] font-bold'
-                          : 'text-[#666666] dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900'
+                          : 'text-[#666666] dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900'
                       )}
                     >
                       <item.icon className="h-4 w-4" />
@@ -326,7 +326,7 @@ export const AdminNavbar = () => {
               {/* Theme toggle in mobile sidebar */}
               <button
                 onClick={toggleTheme}
-                className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900 rounded-xl w-full transition-colors"
+                className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900 rounded-xl w-full transition-colors"
               >
                 {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                 {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}

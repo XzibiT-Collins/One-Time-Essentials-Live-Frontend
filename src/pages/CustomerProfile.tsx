@@ -200,7 +200,7 @@ export const CustomerProfile = () => {
 
         {/* ── Mobile: single-row pill tab bar ── */}
         <div className="lg:hidden">
-          <div className="flex items-center gap-1.5 bg-[#F5F5F5] dark:bg-zinc-800/60 rounded-2xl p-1 overflow-x-auto scrollbar-hide">
+          <div className="flex items-center gap-1.5 bg-[#B8E0F7] dark:bg-zinc-800/60 rounded-2xl p-1 overflow-x-auto scrollbar-hide">
             {TABS.map((tab) => (
               <button
                 key={tab.id}
@@ -228,7 +228,7 @@ export const CustomerProfile = () => {
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                   activeTab === tab.id
                     ? 'bg-accent-dark text-[#1A1A1A] dark:bg-accent-dark dark:text-[#1A1A1A]'
-                    : 'text-[#666666] dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800'
+                    : 'text-[#666666] dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800'
                 }`}
               >
                 <tab.icon className="h-4 w-4" />
@@ -276,7 +276,7 @@ export const CustomerProfile = () => {
                 </div>
                 {isAddressLoading ? (
                   <div className="animate-pulse space-y-3">
-                    {[1, 2].map((i) => <div key={i} className="h-24 bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl" />)}
+                    {[1, 2].map((i) => <div key={i} className="h-24 bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl" />)}
                   </div>
                 ) : addresses.length === 0 ? (
                   <p className="text-[#666666] dark:text-zinc-400 text-sm">No addresses saved yet.</p>
@@ -288,7 +288,7 @@ export const CustomerProfile = () => {
                           <div className="flex items-center gap-2 mb-1">
                             <p className="font-bold text-sm dark:text-white">{addr.recipientName}</p>
                             {addr.isDefault && (
-                              <span className="text-[10px] font-bold uppercase tracking-wider text-[#999999] bg-[#F5F5F5] dark:bg-zinc-700 px-2 py-0.5 rounded-full">
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-[#999999] bg-[#B8E0F7] dark:bg-zinc-700 px-2 py-0.5 rounded-full">
                                 Default
                               </span>
                             )}
@@ -328,7 +328,7 @@ export const CustomerProfile = () => {
                 <h2 className="font-bold text-lg dark:text-white">Current Orders</h2>
                 {isOrdersLoading ? (
                   <div className="animate-pulse space-y-3">
-                    {[1, 2].map((i) => <div key={i} className="h-20 bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl" />)}
+                    {[1, 2].map((i) => <div key={i} className="h-20 bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl" />)}
                   </div>
                 ) : currentOrders.length === 0 ? (
                   <p className="text-[#666666] dark:text-zinc-400 text-sm">No active orders.</p>
@@ -375,7 +375,7 @@ export const CustomerProfile = () => {
                 <h2 className="font-bold text-lg dark:text-white">Order History</h2>
                 {isOrdersLoading ? (
                   <div className="animate-pulse space-y-3">
-                    {[1, 2, 3].map((i) => <div key={i} className="h-20 bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl" />)}
+                    {[1, 2, 3].map((i) => <div key={i} className="h-20 bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl" />)}
                   </div>
                 ) : pastOrders.length === 0 ? (
                   <p className="text-[#666666] dark:text-zinc-400 text-sm">No past orders yet.</p>
@@ -486,7 +486,7 @@ export const CustomerProfile = () => {
 
             {/* Delivery Address */}
             {selectedOrder.deliveryDetail && (
-              <div className="bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl p-4">
+              <div className="bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl p-4">
                 <div className="flex items-center gap-2 mb-3 text-[#999999]">
                   <MapPin className="h-3.5 w-3.5" />
                   <span className="text-[10px] font-bold uppercase tracking-widest">Delivery Address</span>
@@ -513,7 +513,7 @@ export const CustomerProfile = () => {
                 </div>
               ))}
             </div>
-            <div className="h-px bg-[#F5F5F5] dark:bg-zinc-800" />
+            <div className="h-px bg-[#B8E0F7] dark:bg-zinc-800" />
             <div className="space-y-2">
               {/* Subtotal — strike through original when an automatic discount applied */}
               <div className="flex justify-between text-sm text-[#666666] dark:text-zinc-400">
@@ -545,7 +545,7 @@ export const CustomerProfile = () => {
                 </div>
               ))}
               {selectedOrder.taxes && (
-                <div className="flex justify-between text-sm text-[#666666] dark:text-zinc-400 border-t border-dashed border-[#E5E5E5] dark:border-zinc-700 pt-2">
+                <div className="flex justify-between text-sm text-[#666666] dark:text-zinc-400 border-t border-dashed border-[#72BEE8] dark:border-zinc-700 pt-2">
                   <span>Total Tax</span>
                   <span>{selectedOrder.taxes.totalTaxAmount}</span>
                 </div>

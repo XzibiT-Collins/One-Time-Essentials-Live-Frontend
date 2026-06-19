@@ -109,7 +109,7 @@ export const CategoryManagement = () => {
               Description
             </label>
             <textarea
-              className="w-full px-4 py-3 bg-[#F5F5F5] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[100px] outline-none"
+              className="w-full px-4 py-3 bg-[#B8E0F7] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[100px] outline-none"
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               required

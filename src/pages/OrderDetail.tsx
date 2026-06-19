@@ -89,7 +89,7 @@ export const OrderDetail = () => {
             </head>
             <body>
                 <div class="receipt-content">
-                    <h1>PERFUME BUDGET</h1>
+                    <h1>One Time Essentials</h1>
                     <div class="sub">Order Receipt · ${new Date(order.orderDate).toLocaleString()}</div>
 
                 <div class="section">
@@ -137,7 +137,7 @@ export const OrderDetail = () => {
                     ${order.automaticDiscountAmount && parseFloat(order.automaticDiscountAmount.replace(/[^0-9.]/g, '')) > 0 ? `<div style="margin-top:8px;padding:6px 8px;background:#f0fff4;border-radius:6px;font-size:11px;color:#16a34a;font-weight:700;text-align:center">Customer saved ${order.automaticDiscountAmount} on this order!</div>` : ''}
                 </div>
 
-                <div class="footer">Thank you for shopping with PerfumeBudget &mdash; ${new Date().getFullYear()}</div>
+                <div class="footer">Thank you for shopping with OneTimeEssentials &mdash; ${new Date().getFullYear()}</div>
                 <script>window.onload = function() { window.print(); }<\/script>
             </body>
             </html>
@@ -187,7 +187,7 @@ export const OrderDetail = () => {
                     </div>
                     <button
                         onClick={handlePrintReceipt}
-                        className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E5E5E5] dark:border-zinc-700 text-sm font-semibold text-[#666666] dark:text-zinc-300 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 transition-colors w-full sm:w-auto shrink-0"
+                        className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#72BEE8] dark:border-zinc-700 text-sm font-semibold text-[#666666] dark:text-zinc-300 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 transition-colors w-full sm:w-auto shrink-0"
                     >
                         <Printer className="h-4 w-4 shrink-0" />
                         Print Receipt
@@ -223,7 +223,7 @@ export const OrderDetail = () => {
                             {order.lineItems.map((item, i) => (
                                 <div key={i} className="flex justify-between items-center py-4 border-b border-[#F5F5F5] dark:border-zinc-800 last:border-0">
                                     <div className="flex gap-4">
-                                        <div className="h-16 w-16 bg-[#F5F5F5] dark:bg-zinc-800 rounded-xl flex items-center justify-center">
+                                        <div className="h-16 w-16 bg-[#B8E0F7] dark:bg-zinc-800 rounded-xl flex items-center justify-center">
                                             <Package className="h-6 w-6 text-[#999999]" />
                                         </div>
                                         <div>
@@ -267,7 +267,7 @@ export const OrderDetail = () => {
                                 </div>
                             ))}
                             {order.taxes && (
-                                <div className="flex justify-between text-[#666666] dark:text-zinc-400 border-t border-dashed border-[#E5E5E5] dark:border-zinc-700 pt-2">
+                                <div className="flex justify-between text-[#666666] dark:text-zinc-400 border-t border-dashed border-[#72BEE8] dark:border-zinc-700 pt-2">
                                     <span>Total Tax</span>
                                     <span>{order.taxes.totalTaxAmount}</span>
                                 </div>

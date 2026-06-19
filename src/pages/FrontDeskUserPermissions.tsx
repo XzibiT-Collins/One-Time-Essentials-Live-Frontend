@@ -86,7 +86,7 @@ export const FrontDeskUserPermissions = () => {
         <div className="flex items-center gap-4">
           <button 
             onClick={() => navigate('/admin/front-desk')}
-            className="p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 rounded-full transition-colors"
+            className="p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 rounded-full transition-colors"
           >
             <ArrowLeft className="h-6 w-6 dark:text-white" />
           </button>
@@ -202,7 +202,7 @@ export const FrontDeskUserPermissions = () => {
             </div>
           </div>
 
-          <div className="bg-zinc-50 dark:bg-zinc-950/50 rounded-3xl p-8 border border-dashed border-[#E5E5E5] dark:border-zinc-800 flex gap-4">
+          <div className="bg-zinc-50 dark:bg-zinc-950/50 rounded-3xl p-8 border border-dashed border-[#72BEE8] dark:border-zinc-800 flex gap-4">
             <AlertCircle className="h-5 w-5 text-accent-dark flex-shrink-0" />
             <p className="text-sm text-[#666666] dark:text-zinc-400 leading-relaxed">
               Overrides take precedence over the default template. An <span className="font-bold text-accent-dark dark:text-accent">Explicit Deny</span> will block a permission even if it's enabled in the template. An <span className="font-bold text-accent-dark dark:text-accent">Explicit Allow</span> will enable it even if it's disabled in the template.

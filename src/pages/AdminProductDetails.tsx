@@ -364,7 +364,7 @@ export const AdminProductDetails = () => {
         <div>
           <label className="block text-xs font-bold uppercase tracking-widest text-[#999999] mb-2">Note</label>
           <textarea
-            className="w-full px-4 py-3 bg-[#F5F5F5] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[80px] outline-none custom-scrollbar"
+            className="w-full px-4 py-3 bg-[#B8E0F7] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[80px] outline-none custom-scrollbar"
             value={receiptForm.note}
             onChange={(e) => setReceiptForm({ ...receiptForm, note: e.target.value })}
           />
@@ -444,7 +444,7 @@ export const AdminProductDetails = () => {
         <div>
           <label className="block text-xs font-bold uppercase tracking-widest text-[#999999] mb-2">Note</label>
           <textarea
-            className="w-full px-4 py-3 bg-[#F5F5F5] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[80px] outline-none custom-scrollbar"
+            className="w-full px-4 py-3 bg-[#B8E0F7] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[80px] outline-none custom-scrollbar"
             value={adjustmentForm.note}
             onChange={(e) => setAdjustmentForm({ ...adjustmentForm, note: e.target.value })}
           />
@@ -846,7 +846,7 @@ export const AdminProductDetails = () => {
         <div className="lg:col-span-1">
           <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 shadow-sm border border-black/5 dark:border-white/5 h-full flex flex-col min-h-0">
             <div className="relative flex-1 mb-6 min-h-[300px] lg:min-h-0">
-              <div className="absolute inset-0 rounded-2xl overflow-hidden bg-[#F5F5F5] dark:bg-zinc-800">
+              <div className="absolute inset-0 rounded-2xl overflow-hidden bg-[#B8E0F7] dark:bg-zinc-800">
                 {product.productImageUrl ? (
                   <img
                     src={product.productImageUrl}

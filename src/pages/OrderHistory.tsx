@@ -51,7 +51,7 @@ export const OrderHistory = () => {
 
       {isLoading ? (
         <div className="space-y-4 animate-pulse">
-          {[1, 2, 3].map((i) => <div key={i} className="h-20 bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl" />)}
+          {[1, 2, 3].map((i) => <div key={i} className="h-20 bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl" />)}
         </div>
       ) : orders.length === 0 ? (
         <div className="flex flex-col items-center justify-center h-64 text-center">
@@ -121,7 +121,7 @@ export const OrderHistory = () => {
                 </div>
               ))}
             </div>
-            <div className="h-px bg-[#F5F5F5] dark:bg-zinc-800" />
+            <div className="h-px bg-[#B8E0F7] dark:bg-zinc-800" />
             <div className="flex justify-between font-bold dark:text-white">
               <span>Total</span>
               <span>{selectedOrder.totalAmount}</span>

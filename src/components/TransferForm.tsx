@@ -168,7 +168,7 @@ export const TransferForm = ({ fixedProduct, locations, onSuccess }: TransferFor
           Note (optional)
         </label>
         <textarea
-          className="w-full px-4 py-3 bg-[#F5F5F5] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[72px] outline-none custom-scrollbar"
+          className="w-full px-4 py-3 bg-[#B8E0F7] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[72px] outline-none custom-scrollbar"
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="e.g. Restocking floor before weekend"

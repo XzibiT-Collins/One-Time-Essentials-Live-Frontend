@@ -92,9 +92,9 @@ export const ProductListingPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-10 hidden sm:block">
-        <h1 className="text-4xl font-sans font-bold dark:text-white mb-2">All Fragrances</h1>
+        <h1 className="text-4xl font-sans font-bold dark:text-white mb-2">All Products</h1>
         <p className="text-[#666666] dark:text-zinc-400">
-          Explore our full collection of curated scents.
+          Explore fresh groceries and daily essentials.
         </p>
       </div>
 
@@ -106,10 +106,10 @@ export const ProductListingPage = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999]" />
             <input
               type="text"
-              placeholder="Search fragrances..."
+              placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => updateParam('q', e.target.value)}
-              className="w-full pl-9 pr-4 py-2.5 bg-[#F5F5F5] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent outline-none"
+              className="w-full pl-9 pr-4 py-2.5 bg-[#B8E0F7] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent outline-none"
             />
           </div>
 
@@ -132,7 +132,7 @@ export const ProductListingPage = () => {
               <div className="hidden lg:block space-y-1">
                 <button
                   onClick={() => updateParam('category', '')}
-                  className={`w-full text-left text-sm px-3 py-2 rounded-lg transition-colors ${!selectedCategory ? 'bg-accent-dark text-[#1A1A1A] font-semibold' : 'text-[#666666] dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800'}`}
+                  className={`w-full text-left text-sm px-3 py-2 rounded-lg transition-colors ${!selectedCategory ? 'bg-accent-dark text-[#1A1A1A] font-semibold' : 'text-[#666666] dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800'}`}
                 >
                   All
                 </button>
@@ -140,7 +140,7 @@ export const ProductListingPage = () => {
                   <button
                     key={cat.categoryId}
                     onClick={() => updateParam('category', String(cat.categoryId))}
-                    className={`w-full text-left text-sm px-3 py-2 rounded-lg transition-colors ${selectedCategory === String(cat.categoryId) ? 'bg-accent-dark text-[#1A1A1A] font-semibold' : 'text-[#666666] dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800'}`}
+                    className={`w-full text-left text-sm px-3 py-2 rounded-lg transition-colors ${selectedCategory === String(cat.categoryId) ? 'bg-accent-dark text-[#1A1A1A] font-semibold' : 'text-[#666666] dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800'}`}
                   >
                     {cat.categoryName}
                   </button>
@@ -165,13 +165,13 @@ export const ProductListingPage = () => {
           {isLoading ? (
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {Array.from({ length: PAGE_SIZE }).map((_, i) => (
-                <div key={i} className="animate-pulse bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl aspect-[3/4]" />
+                <div key={i} className="animate-pulse bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl aspect-[3/4]" />
               ))}
             </div>
           ) : products.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-64 text-center">
               <SlidersHorizontal className="h-10 w-10 text-[#CCCCCC] mb-4" />
-              <p className="text-[#666666] dark:text-zinc-400">No fragrances found.</p>
+              <p className="text-[#666666] dark:text-zinc-400">No products found.</p>
             </div>
           ) : (
             <motion.div

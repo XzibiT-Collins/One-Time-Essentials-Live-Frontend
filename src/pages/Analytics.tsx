@@ -37,7 +37,7 @@ import { CouponMetricResponse, MostPurchaseProductResponse, SiteVisitMetric, Top
 import toast from 'react-hot-toast';
 const getStatusColor = (statusName: string) => {
   const normalized = statusName.toUpperCase();
-  if (normalized.includes('COMPLETED')) return '#FFD1DC'; // Pink for walk-in COMPLETED
+  if (normalized.includes('COMPLETED')) return '#3099CC'; // Blue for walk-in COMPLETED
   if (normalized.includes('DELIVERED')) return '#10b981';
   if (normalized.includes('PACKING')) return '#6b7280';
   if (normalized.includes('PENDING')) return '#f97316';
@@ -83,7 +83,7 @@ const BarTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload?.length) return null;
   return (
     <div className="bg-[#1A1A1A] dark:bg-zinc-800 text-white rounded-2xl px-4 py-3 shadow-xl text-sm">
-      <p className="font-bold mb-1 text-[#FFD1DC]">{label}</p>
+      <p className="font-bold mb-1 text-[#3099CC]">{label}</p>
       <p className="text-white">{payload[0].value?.toLocaleString()} sold</p>
     </div>
   );
@@ -93,7 +93,7 @@ const RevenueTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload?.length) return null;
   return (
     <div className="bg-[#1A1A1A] dark:bg-zinc-800 text-white rounded-2xl px-4 py-3 shadow-xl text-sm">
-      <p className="font-bold mb-1 text-[#FFD1DC]">{label}</p>
+      <p className="font-bold mb-1 text-[#3099CC]">{label}</p>
       <p className="text-white">{formatPrice(payload[0].value || 0)}</p>
     </div>
   );
@@ -105,7 +105,7 @@ const PieTooltip = ({ active, payload }: any) => {
   const isCompleted = name.toUpperCase().includes('COMPLETED');
   return (
     <div className="bg-[#1A1A1A] dark:bg-zinc-800 text-white rounded-2xl px-4 py-3 shadow-xl text-sm">
-      <p className="font-bold mb-1" style={{ color: payload[0].payload?.fill || '#FFD1DC' }}>
+      <p className="font-bold mb-1" style={{ color: payload[0].payload?.fill || '#3099CC' }}>
         {name} {isCompleted && <span className="text-[10px] opacity-70 ml-1">(Walk-in)</span>}
       </p>
       <p className="text-white">{payload[0].value?.toLocaleString()} orders</p>
@@ -250,7 +250,7 @@ export const Analytics = () => {
             <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6 xl:gap-8 mb-8">
               <h3 className="text-lg font-bold dark:text-white shrink-0">Revenue Breakdown</h3>
               <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 w-full xl:w-auto xl:justify-end">
-                <div className="flex flex-wrap bg-[#F5F5F5] dark:bg-zinc-800 p-1 rounded-xl w-full sm:w-auto shrink-0">
+                <div className="flex flex-wrap bg-[#B8E0F7] dark:bg-zinc-800 p-1 rounded-xl w-full sm:w-auto shrink-0">
                   {['Day', 'Week', 'Month', 'Year'].map((t) => (
                     <button
                       key={t}
@@ -266,7 +266,7 @@ export const Analytics = () => {
                     </button>
                   ))}
                 </div>
-                <div className="flex items-center gap-2 bg-[#F5F5F5] dark:bg-zinc-800 p-1 rounded-xl text-xs px-2 w-full sm:w-auto shrink-0">
+                <div className="flex items-center gap-2 bg-[#B8E0F7] dark:bg-zinc-800 p-1 rounded-xl text-xs px-2 w-full sm:w-auto shrink-0">
                   <input 
                     type="date" 
                     value={fromDate} 
@@ -303,15 +303,15 @@ export const Analytics = () => {
                   <AreaChart data={salesAnalytics.revenueBreakdown}>
                     <defs>
                       <linearGradient id="colorRev" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#FFD1DC" stopOpacity={0.3} />
-                        <stop offset="95%" stopColor="#FFD1DC" stopOpacity={0} />
+                        <stop offset="5%" stopColor="#3099CC" stopOpacity={0.3} />
+                        <stop offset="95%" stopColor="#3099CC" stopOpacity={0} />
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F5F5F5" />
                     <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#999999' }} />
                     <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#999999' }} />
                     <Tooltip content={<RevenueTooltip />} />
-                    <Area type="monotone" dataKey="revenue" stroke="#FFD1DC" strokeWidth={3} fillOpacity={1} fill="url(#colorRev)" />
+                    <Area type="monotone" dataKey="revenue" stroke="#3099CC" strokeWidth={3} fillOpacity={1} fill="url(#colorRev)" />
                   </AreaChart>
                 </ResponsiveContainer>
               )}
@@ -483,7 +483,7 @@ export const Analytics = () => {
                     <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#999999' }} />
                     <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#999999' }} />
                     <Tooltip content={<BarTooltip />} cursor={{ fill: 'rgba(255,209,220,0.08)' }} />
-                    <Bar dataKey="sold" fill="#FFD1DC" radius={[10, 10, 0, 0]} />
+                    <Bar dataKey="sold" fill="#3099CC" radius={[10, 10, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               )}
@@ -663,7 +663,7 @@ export const Analytics = () => {
                       <span className="text-[#666666] dark:text-zinc-400 font-mono">{page.page}</span>
                       <span className="font-bold dark:text-white">{page.uniqueVisits.toLocaleString()}</span>
                     </div>
-                    <div className="h-1.5 bg-[#F5F5F5] dark:bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-[#B8E0F7] dark:bg-zinc-800 rounded-full overflow-hidden">
                       <div className="h-full bg-accent" style={{ width: `${sharePercentage}%` }} />
                     </div>
                   </div>
@@ -695,7 +695,7 @@ export const Analytics = () => {
                     <YAxis yAxisId="right" orientation="right" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#999999' }} />
                     <Tooltip />
                     <Legend />
-                    <Line yAxisId="left" type="monotone" dataKey="visits" stroke="#FFD1DC" strokeWidth={3} dot={{ r: 4, fill: '#FFD1DC' }} />
+                    <Line yAxisId="left" type="monotone" dataKey="visits" stroke="#3099CC" strokeWidth={3} dot={{ r: 4, fill: '#3099CC' }} />
                     <Line yAxisId="right" type="monotone" dataKey="orders" stroke="#1A1A1A" strokeWidth={3} dot={{ r: 4, fill: '#1A1A1A' }} />
                   </LineChart>
                 </ResponsiveContainer>

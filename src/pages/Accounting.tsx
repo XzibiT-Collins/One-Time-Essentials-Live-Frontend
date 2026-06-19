@@ -83,7 +83,7 @@ export const Accounting = () => {
           {value}
         </p>
       </div>
-      <div className="h-12 w-12 rounded-full bg-[#F5F5F5] dark:bg-zinc-800 flex items-center justify-center">
+      <div className="h-12 w-12 rounded-full bg-[#B8E0F7] dark:bg-zinc-800 flex items-center justify-center">
         <Icon className="h-6 w-6 text-zinc-600 dark:text-zinc-400" />
       </div>
     </div>
@@ -211,7 +211,7 @@ export const Accounting = () => {
             <button
               key={type}
               onClick={() => setJournalType(type as any)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${journalType === type ? 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-900' : 'bg-transparent text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800'}`}
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${journalType === type ? 'bg-accent text-[#1A1A1A] font-semibold shadow-sm' : 'bg-transparent text-zinc-600 dark:text-zinc-400 hover:bg-accent/10 hover:text-accent-dark dark:hover:bg-accent/20 dark:hover:text-white'}`}
             >
               {type.charAt(0).toUpperCase() + type.slice(1)}
             </button>
@@ -330,8 +330,8 @@ export const Accounting = () => {
             onClick={() => setActiveTab(tab.id as any)}
             className={`px-6 py-3 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
               activeTab === tab.id
-                ? 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 shadow-sm'
-                : 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800'
+                ? 'bg-accent text-[#1A1A1A] font-semibold shadow-sm'
+                : 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-accent/10 hover:text-accent-dark hover:border-accent-dark/30 dark:hover:bg-accent/20 dark:hover:text-white'
             }`}
           >
             {tab.label}

@@ -462,7 +462,7 @@ export const ProductManagement = () => {
               Full Description
             </label>
             <textarea
-              className="w-full px-4 py-3 bg-[#F5F5F5] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[80px] outline-none custom-scrollbar"
+              className="w-full px-4 py-3 bg-[#B8E0F7] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[80px] outline-none custom-scrollbar"
               value={formData.productDescription}
               onChange={(e) => setField('productDescription', e.target.value)}
               required
@@ -592,7 +592,7 @@ export const ProductManagement = () => {
                 </div>
               ) : editingProduct?.productImageUrl ? (
                 /* Show existing image when editing */
-                <div className="relative w-full h-48 rounded-2xl overflow-hidden border-2 border-[#E5E5E5] dark:border-zinc-700">
+                <div className="relative w-full h-48 rounded-2xl overflow-hidden border-2 border-[#72BEE8] dark:border-zinc-700">
                   <img
                     src={editingProduct.productImageUrl}
                     alt="Current"

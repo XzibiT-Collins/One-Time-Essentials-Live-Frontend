@@ -8,14 +8,14 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
   --font-mono: "JetBrains Mono", monospace;
-  --color-accent: #FFD1DC;
-  /* Light Pink */
-  --color-accent-dark: #FFB7C5;
+  --color-accent: #3099CC;
+  /* Brand Blue */
+  --color-accent-dark: #1278A0;
 }
 
 @layer base {
   body {
-    @apply antialiased transition-colors duration-300 bg-[#FDFBFB] text-zinc-900;
+    @apply antialiased transition-colors duration-300 bg-[#EAF6FD] text-zinc-900;
   }
 
   .dark body {

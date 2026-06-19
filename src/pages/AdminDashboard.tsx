@@ -48,30 +48,7 @@ interface KPICard {
   hint?: string;
 }
 
-const revenueData = [
-  { date: 'Feb 18', revenue: 4000, prevRevenue: 3200 },
-  { date: 'Feb 19', revenue: 3000, prevRevenue: 3500 },
-  { date: 'Feb 20', revenue: 5000, prevRevenue: 4100 },
-  { date: 'Feb 21', revenue: 2780, prevRevenue: 3000 },
-  { date: 'Feb 22', revenue: 1890, prevRevenue: 2100 },
-  { date: 'Feb 23', revenue: 2390, prevRevenue: 2800 },
-  { date: 'Feb 24', revenue: 3490, prevRevenue: 3100 },
-];
 
-const topProducts = [
-  { name: 'Rosa Damascena No. 1', sold: 450, revenue: 22500, share: '18%', image: 'https://picsum.photos/seed/perfume1/100/100' },
-  { name: 'Nuit de Musc', sold: 320, revenue: 19200, share: '15%', image: 'https://picsum.photos/seed/perfume2/100/100' },
-  { name: 'Ciel de Vanille', sold: 280, revenue: 14000, share: '11%', image: 'https://picsum.photos/seed/perfume3/100/100' },
-  { name: 'Brume Océanique', sold: 210, revenue: 10500, share: '8%', image: 'https://picsum.photos/seed/perfume4/100/100' },
-];
-
-const recentOrders = [
-  { id: 'ORD-7421', customer: 'Sarah Jenkins', amount: 450.00, status: 'PAID', date: 'Today, 2:30 PM', avatar: 'https://i.pravatar.cc/150?u=1' },
-  { id: 'ORD-7420', customer: 'Michael Chen', amount: 129.00, status: 'PENDING', date: 'Today, 1:15 PM', avatar: 'https://i.pravatar.cc/150?u=2' },
-  { id: 'ORD-7419', customer: 'Emma Wilson', amount: 89.00, status: 'FAILED', date: 'Yesterday', avatar: 'https://i.pravatar.cc/150?u=3' },
-  { id: 'ORD-7418', customer: 'David Miller', amount: 210.00, status: 'CANCELLED', date: 'Yesterday', avatar: 'https://i.pravatar.cc/150?u=4' },
-  { id: 'ORD-7417', customer: 'Olivia Brown', amount: 155.00, status: 'PAID', date: 'Feb 22', avatar: 'https://i.pravatar.cc/150?u=5' },
-];
 
 export const AdminDashboard = () => {
   const [recentOrders, setRecentOrders] = useState<OrderListResponse[]>([]);
@@ -232,8 +209,8 @@ export const AdminDashboard = () => {
                 <AreaChart data={metrics?.dailyRevenueMetric || []}>
                   <defs>
                     <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#FFD1DC" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#FFD1DC" stopOpacity={0} />
+                      <stop offset="5%" stopColor="#3099CC" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#3099CC" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E5E5" strokeOpacity={0.5} />
@@ -270,7 +247,7 @@ export const AdminDashboard = () => {
                   <Area
                     type="monotone"
                     dataKey="revenue"
-                    stroke="#FFD1DC"
+                    stroke="#3099CC"
                     strokeWidth={3}
                     fillOpacity={1}
                     fill="url(#colorRevenue)"

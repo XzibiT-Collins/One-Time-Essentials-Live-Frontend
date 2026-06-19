@@ -57,7 +57,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
     <div className={cn("space-y-4", className)}>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {images.map((url, index) => (
-          <div key={index} className="relative group aspect-square rounded-xl overflow-hidden border border-[#E5E5E5] dark:border-zinc-800 bg-white dark:bg-zinc-900">
+          <div key={index} className="relative group aspect-square rounded-xl overflow-hidden border border-[#72BEE8] dark:border-zinc-800 bg-white dark:bg-zinc-900">
             <img 
               src={url} 
               alt={`Uploaded ${index + 1}`} 
@@ -80,11 +80,11 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
               "aspect-square rounded-xl border-2 border-dashed flex flex-col items-center justify-center cursor-pointer transition-colors",
               isDragActive 
                 ? "border-accent bg-accent/5" 
-                : "border-[#E5E5E5] dark:border-zinc-800 hover:border-accent/50 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800/50"
+                : "border-[#72BEE8] dark:border-zinc-800 hover:border-accent/50 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800/50"
             )}
           >
             <input {...getInputProps()} />
-            <div className="p-3 rounded-full bg-[#F5F5F5] dark:bg-zinc-800 mb-2">
+            <div className="p-3 rounded-full bg-[#B8E0F7] dark:bg-zinc-800 mb-2">
               <Upload className="h-5 w-5 text-[#999999]" />
             </div>
             <p className="text-xs font-medium text-[#666666] dark:text-zinc-400 text-center px-2">

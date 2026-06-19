@@ -42,7 +42,7 @@ export const Dropdown = ({ value, onChange, options, placeholder = 'Select...' }
             <button
                 type="button"
                 onClick={() => setIsOpen((prev) => !prev)}
-                className="flex w-full items-center justify-between gap-2 rounded-xl border border-[#E5E5E5] dark:border-zinc-800 bg-white dark:bg-zinc-900 px-4 py-2.5 text-sm text-[#1A1A1A] dark:text-white transition-all focus:outline-none focus:ring-2 focus:ring-accent/20 hover:border-accent-dark/40"
+                className="flex w-full items-center justify-between gap-2 rounded-xl border border-[#72BEE8] dark:border-zinc-800 bg-white dark:bg-zinc-900 px-4 py-2.5 text-sm text-[#1A1A1A] dark:text-white transition-all focus:outline-none focus:ring-2 focus:ring-accent/20 hover:border-accent-dark/40"
             >
                 <span className={selected ? '' : 'text-[#999999]'}>
                     {selected ? selected.label : placeholder}
@@ -60,7 +60,7 @@ export const Dropdown = ({ value, onChange, options, placeholder = 'Select...' }
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 6 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute z-50 mt-1.5 w-full rounded-2xl border border-[#E5E5E5] dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xl overflow-hidden"
+                        className="absolute z-50 mt-1.5 w-full rounded-2xl border border-[#72BEE8] dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-xl overflow-hidden"
                     >
                         <div className="p-1">
                             {options.map((option) => {
@@ -72,7 +72,7 @@ export const Dropdown = ({ value, onChange, options, placeholder = 'Select...' }
                                         onClick={() => handleSelect(option.value)}
                                         className={`flex items-center justify-between w-full px-3 py-2 rounded-xl text-sm transition-colors ${isActive
                                                 ? 'bg-accent-dark text-[#1A1A1A] font-semibold'
-                                                : 'text-[#666666] dark:text-zinc-400 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800'
+                                                : 'text-[#666666] dark:text-zinc-400 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800'
                                             }`}
                                     >
                                         <span>{option.label}</span>

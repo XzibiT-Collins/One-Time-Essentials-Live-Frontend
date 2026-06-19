@@ -55,11 +55,11 @@ export const ProductDetails = () => {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 animate-pulse">
-          <div className="aspect-square lg:aspect-[3/4] bg-[#F5F5F5] dark:bg-zinc-800 rounded-3xl" />
+          <div className="aspect-square lg:aspect-[3/4] bg-[#B8E0F7] dark:bg-zinc-800 rounded-3xl" />
           <div className="space-y-4">
-            <div className="h-6 bg-[#F5F5F5] dark:bg-zinc-800 rounded w-1/3" />
-            <div className="h-10 bg-[#F5F5F5] dark:bg-zinc-800 rounded w-2/3" />
-            <div className="h-20 bg-[#F5F5F5] dark:bg-zinc-800 rounded" />
+            <div className="h-6 bg-[#B8E0F7] dark:bg-zinc-800 rounded w-1/3" />
+            <div className="h-10 bg-[#B8E0F7] dark:bg-zinc-800 rounded w-2/3" />
+            <div className="h-20 bg-[#B8E0F7] dark:bg-zinc-800 rounded" />
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@ export const ProductDetails = () => {
         className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#666666] hover:text-accent-dark transition-colors mb-4 lg:mb-8 group"
       >
         <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-        Back to fragrances
+        Back to products
       </Link>
 
       {/* ── Mobile layout: stacked, compact ── */}
@@ -90,7 +90,7 @@ export const ProductDetails = () => {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className="aspect-square overflow-hidden rounded-2xl bg-[#F5F5F5] dark:bg-zinc-900 w-full"
+          className="aspect-square overflow-hidden rounded-2xl bg-[#B8E0F7] dark:bg-zinc-900 w-full"
         >
           {product.productImageUrl ? (
             <img
@@ -164,7 +164,7 @@ export const ProductDetails = () => {
           {!product.isOutOfStock && (
             <div className="flex items-center gap-3 pt-1">
               {/* Quantity stepper */}
-              <div className="flex items-center gap-2 bg-[#F5F5F5] dark:bg-zinc-800 rounded-xl p-1 shrink-0">
+              <div className="flex items-center gap-2 bg-[#B8E0F7] dark:bg-zinc-800 rounded-xl p-1 shrink-0">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="h-9 w-9 flex items-center justify-center rounded-lg hover:bg-white dark:hover:bg-zinc-700 transition-colors"
@@ -210,7 +210,7 @@ export const ProductDetails = () => {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          className="aspect-[3/4] overflow-hidden rounded-3xl bg-[#F5F5F5] dark:bg-zinc-900"
+          className="aspect-[3/4] overflow-hidden rounded-3xl bg-[#B8E0F7] dark:bg-zinc-900"
         >
           {product.productImageUrl ? (
             <img
@@ -286,7 +286,7 @@ export const ProductDetails = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <p className="text-xs font-bold uppercase tracking-widest text-[#999999]">Quantity</p>
-                <div className="flex items-center gap-3 bg-[#F5F5F5] dark:bg-zinc-800 rounded-xl p-1">
+                <div className="flex items-center gap-3 bg-[#B8E0F7] dark:bg-zinc-800 rounded-xl p-1">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     className="h-8 w-8 flex items-center justify-center rounded-lg hover:bg-white dark:hover:bg-zinc-700 transition-colors"

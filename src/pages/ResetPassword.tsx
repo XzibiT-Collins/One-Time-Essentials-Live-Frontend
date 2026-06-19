@@ -60,7 +60,7 @@ export const ResetPassword = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="min-h-screen flex items-center justify-center bg-[#F5F5F5] dark:bg-zinc-950 px-4"
+                className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4"
             >
                 <div className="w-full max-w-md">
                     <div className="text-center mb-10">
@@ -105,7 +105,7 @@ export const ResetPassword = () => {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="min-h-screen flex items-center justify-center bg-[#F5F5F5] dark:bg-zinc-950 px-4 py-12"
+            className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4 py-12"
         >
             <div className="w-full max-w-md">
                 <div className="text-center mb-10">

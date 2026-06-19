@@ -202,7 +202,7 @@ export const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
           placeholder={placeholder}
           required={required}
           className={cn(
-            'flex w-full rounded-xl border border-[#E5E5E5] bg-white px-4 py-2.5 pr-10 text-sm transition-all placeholder:text-[#999999] focus:outline-none focus:ring-2 focus:ring-[#1A1A1A]/5 focus:border-[#1A1A1A] dark:bg-zinc-900 dark:border-zinc-800 dark:text-white dark:focus:border-accent dark:focus:ring-accent/5',
+            'flex w-full rounded-xl border border-[#72BEE8] bg-white px-4 py-2.5 pr-10 text-sm transition-all placeholder:text-[#999999] focus:outline-none focus:ring-2 focus:ring-[#1A1A1A]/5 focus:border-[#1A1A1A] dark:bg-zinc-900 dark:border-zinc-800 dark:text-white dark:focus:border-accent dark:focus:ring-accent/5',
             error && 'border-red-500 focus:border-red-500 focus:ring-red-500/5',
             className
           )}
@@ -243,7 +243,7 @@ export const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
         </div>
       </div>
       {status === 'OK' && (
-        <ul className="absolute z-[100] w-full bg-white dark:bg-zinc-900 border border-[#E5E5E5] dark:border-zinc-800 rounded-xl mt-1 shadow-xl max-h-60 overflow-auto py-2">
+        <ul className="absolute z-[100] w-full bg-white dark:bg-zinc-900 border border-[#72BEE8] dark:border-zinc-800 rounded-xl mt-1 shadow-xl max-h-60 overflow-auto py-2">
           {data.map((suggestion) => {
             const {
               place_id,
@@ -254,7 +254,7 @@ export const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
               <li
                 key={place_id}
                 onClick={handleSelect(suggestion)}
-                className="px-4 py-2.5 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 cursor-pointer transition-colors"
+                className="px-4 py-2.5 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 cursor-pointer transition-colors"
               >
                 <p className="text-sm font-bold dark:text-white">{main_text}</p>
                 <p className="text-[10px] text-[#999999] dark:text-zinc-500 truncate">{secondary_text}</p>

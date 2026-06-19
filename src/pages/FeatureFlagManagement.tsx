@@ -68,7 +68,7 @@ export const FeatureFlagManagement = () => {
                     ))}
                 </div>
             ) : flags.length === 0 ? (
-                <div className="text-center py-12 bg-white dark:bg-zinc-900 rounded-3xl border border-dashed border-[#E5E5E5] dark:border-zinc-800">
+                <div className="text-center py-12 bg-white dark:bg-zinc-900 rounded-3xl border border-dashed border-[#72BEE8] dark:border-zinc-800">
                     <p className="text-[#666666] dark:text-zinc-400">No feature flags found.</p>
                 </div>
             ) : (
@@ -78,7 +78,7 @@ export const FeatureFlagManagement = () => {
                             key={flag.featureKey}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="bg-white dark:bg-zinc-900 rounded-3xl p-6 shadow-sm border border-[#E5E5E5] dark:border-zinc-800"
+                            className="bg-white dark:bg-zinc-900 rounded-3xl p-6 shadow-sm border border-[#72BEE8] dark:border-zinc-800"
                         >
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                                 <div className="flex-1">
@@ -89,7 +89,7 @@ export const FeatureFlagManagement = () => {
                                 </div>
 
                                 <div className="flex flex-col gap-4 min-w-[200px]">
-                                    <div className="flex items-center justify-between p-3 bg-[#F5F5F5] dark:bg-zinc-800 rounded-xl">
+                                    <div className="flex items-center justify-between p-3 bg-[#B8E0F7] dark:bg-zinc-800 rounded-xl">
                                         <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#666666] dark:text-zinc-400">
                                             <Shield className="h-3.5 w-3.5" /> Admins
                                         </div>
@@ -100,7 +100,7 @@ export const FeatureFlagManagement = () => {
                                         />
                                     </div>
 
-                                    <div className="flex items-center justify-between p-3 bg-[#F5F5F5] dark:bg-zinc-800 rounded-xl">
+                                    <div className="flex items-center justify-between p-3 bg-[#B8E0F7] dark:bg-zinc-800 rounded-xl">
                                         <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#666666] dark:text-zinc-400">
                                             <Shield className="h-3.5 w-3.5" /> Front Desk
                                         </div>
@@ -111,7 +111,7 @@ export const FeatureFlagManagement = () => {
                                         />
                                     </div>
 
-                                    <div className="flex items-center justify-between p-3 bg-[#F5F5F5] dark:bg-zinc-800 rounded-xl">
+                                    <div className="flex items-center justify-between p-3 bg-[#B8E0F7] dark:bg-zinc-800 rounded-xl">
                                         <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#666666] dark:text-zinc-400">
                                             <User className="h-3.5 w-3.5" /> Customers
                                         </div>

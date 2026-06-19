@@ -68,7 +68,7 @@ export const CartDrawer = () => {
               </div>
               <button
                 onClick={() => setIsCartOpen(false)}
-                className="p-2 hover:bg-[#F5F5F5] dark:hover:bg-zinc-900 rounded-full transition-colors"
+                className="p-2 hover:bg-[#B8E0F7] dark:hover:bg-zinc-900 rounded-full transition-colors"
               >
                 <X className="h-5 w-5 dark:text-zinc-400" />
               </button>
@@ -89,7 +89,7 @@ export const CartDrawer = () => {
                 <div className="space-y-6">
                   {items.map((item) => (
                     <div key={item.id} className="flex gap-4">
-                      <div className="h-24 w-20 rounded-xl overflow-hidden bg-[#F5F5F5] dark:bg-zinc-900 flex-shrink-0">
+                      <div className="h-24 w-20 rounded-xl overflow-hidden bg-[#B8E0F7] dark:bg-zinc-900 flex-shrink-0">
                         {item.imageUrl ? (
                           <img
                             src={item.imageUrl}
@@ -127,17 +127,17 @@ export const CartDrawer = () => {
                         </div>
                         </div>
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center border border-[#E5E5E5] dark:border-zinc-800 rounded-full px-1 py-0.5 bg-white dark:bg-zinc-900">
+                          <div className="flex items-center border border-[#72BEE8] dark:border-zinc-800 rounded-full px-1 py-0.5 bg-white dark:bg-zinc-900">
                             <button
                               onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                              className="p-1 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 rounded-full transition-colors"
+                              className="p-1 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 rounded-full transition-colors"
                             >
                               <Minus className="h-3 w-3 dark:text-zinc-400" />
                             </button>
                             <span className="w-8 text-center text-xs font-medium dark:text-zinc-300">{item.quantity}</span>
                             <button
                               onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                              className="p-1 hover:bg-[#F5F5F5] dark:hover:bg-zinc-800 rounded-full transition-colors"
+                              className="p-1 hover:bg-[#B8E0F7] dark:hover:bg-zinc-800 rounded-full transition-colors"
                             >
                               <Plus className="h-3 w-3 dark:text-zinc-400" />
                             </button>

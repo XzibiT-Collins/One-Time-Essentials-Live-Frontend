@@ -502,7 +502,7 @@ export const WalkInOrderCreation = () => {
                       {taxData ? taxData.totalTaxAmount : formatPrice(0)}
                     </span>
                  </div>
-                 <div className="h-px bg-[#F5F5F5] dark:bg-zinc-800 my-4" />
+                 <div className="h-px bg-[#B8E0F7] dark:bg-zinc-800 my-4" />
                  <div className="flex justify-between text-2xl font-bold dark:text-white">
                     <span>Grand Total</span>
                     <span className="text-accent-dark dark:text-accent">

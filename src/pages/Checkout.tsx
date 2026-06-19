@@ -157,7 +157,7 @@ export const Checkout = () => {
             {isAddressLoading ? (
               <div className="space-y-3">
                 {[1, 2].map((i) => (
-                  <div key={i} className="animate-pulse h-24 bg-[#F5F5F5] dark:bg-zinc-800 rounded-2xl" />
+                  <div key={i} className="animate-pulse h-24 bg-[#B8E0F7] dark:bg-zinc-800 rounded-2xl" />
                 ))}
               </div>
             ) : addresses.length === 0 ? (
@@ -172,7 +172,7 @@ export const Checkout = () => {
                     onClick={() => setSelectedAddressId(addr.id)}
                     whileTap={{ scale: 0.99 }}
                     className={`w-full text-left p-4 rounded-2xl border-2 transition-colors ${selectedAddressId === addr.id
-                      ? 'border-[#1A1A1A] dark:border-white bg-[#F5F5F5] dark:bg-zinc-800'
+                      ? 'border-[#1A1A1A] dark:border-white bg-[#B8E0F7] dark:bg-zinc-800'
                       : 'border-[#F5F5F5] dark:border-zinc-800 bg-white dark:bg-zinc-900'
                       }`}
                   >
@@ -192,7 +192,7 @@ export const Checkout = () => {
                       )}
                     </div>
                     {addr.isDefault && (
-                      <span className="inline-block mt-2 text-[10px] font-bold uppercase tracking-wider text-[#999999] bg-[#F5F5F5] dark:bg-zinc-700 px-2 py-0.5 rounded-full">
+                      <span className="inline-block mt-2 text-[10px] font-bold uppercase tracking-wider text-[#999999] bg-[#B8E0F7] dark:bg-zinc-700 px-2 py-0.5 rounded-full">
                         Default
                       </span>
                     )}
@@ -229,8 +229,8 @@ export const Checkout = () => {
               <div className="space-y-2 py-1">
                 {[1, 2].map((i) => (
                   <div key={i} className="animate-pulse flex justify-between">
-                    <div className="h-3 w-24 bg-[#F5F5F5] dark:bg-zinc-800 rounded" />
-                    <div className="h-3 w-12 bg-[#F5F5F5] dark:bg-zinc-800 rounded" />
+                    <div className="h-3 w-24 bg-[#B8E0F7] dark:bg-zinc-800 rounded" />
+                    <div className="h-3 w-12 bg-[#B8E0F7] dark:bg-zinc-800 rounded" />
                   </div>
                 ))}
               </div>
@@ -251,7 +251,7 @@ export const Checkout = () => {
               </>
             ) : null}
 
-            <div className="h-px bg-[#F5F5F5] dark:bg-zinc-800" />
+            <div className="h-px bg-[#B8E0F7] dark:bg-zinc-800" />
 
             {/* Grand Total */}
             <div className="flex justify-between font-bold text-base dark:text-white">
@@ -272,7 +272,7 @@ export const Checkout = () => {
               onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
               error={couponError || undefined}
               disabled={anyItemOnSale}
-              className="bg-[#F5F5F5] dark:bg-zinc-800 border-none h-11 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="bg-[#B8E0F7] dark:bg-zinc-800 border-none h-11 disabled:opacity-60 disabled:cursor-not-allowed"
             />
             {anyItemOnSale && (
               <p className="text-xs text-amber-500 mt-1.5 font-medium leading-relaxed">
