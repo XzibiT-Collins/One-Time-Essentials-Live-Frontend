@@ -58,9 +58,16 @@ export const Login = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4"
+      className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4 relative overflow-hidden"
     >
-      <div className="w-full max-w-md">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/grocery-shop.webp"
+          alt="Background"
+          className="w-full h-full object-cover opacity-30 dark:opacity-10"
+        />
+      </div>
+      <div className="w-full max-w-md relative z-10">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-sans font-bold dark:text-white">Sign In</h1>
           <p className="text-sm text-[#666666] dark:text-zinc-400 mt-2">

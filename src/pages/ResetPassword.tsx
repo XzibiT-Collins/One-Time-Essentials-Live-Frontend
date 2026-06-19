@@ -60,9 +60,16 @@ export const ResetPassword = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4"
+                className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4 relative overflow-hidden"
             >
-                <div className="w-full max-w-md">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/grocery-shop.webp"
+          alt="Background"
+          className="w-full h-full object-cover opacity-30 dark:opacity-10"
+        />
+      </div>
+      <div className="w-full max-w-md relative z-10">
                     <div className="text-center mb-10">
                         <div className="mx-auto w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4">
                             <AlertTriangle className="h-8 w-8 text-red-500" />
@@ -105,9 +112,16 @@ export const ResetPassword = () => {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4 py-12"
+            className="min-h-screen flex items-center justify-center bg-[#B8E0F7] dark:bg-zinc-950 px-4 py-12 relative overflow-hidden"
         >
-            <div className="w-full max-w-md">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/grocery-shop.webp"
+          alt="Background"
+          className="w-full h-full object-cover opacity-30 dark:opacity-10"
+        />
+      </div>
+      <div className="w-full max-w-md relative z-10">
                 <div className="text-center mb-10">
                     <div className="mx-auto w-16 h-16 bg-accent/20 dark:bg-accent/10 rounded-full flex items-center justify-center mb-4">
                         <ShieldCheck className="h-8 w-8 text-accent-dark" />
