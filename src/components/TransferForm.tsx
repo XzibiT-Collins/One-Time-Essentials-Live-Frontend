@@ -154,8 +154,10 @@ export const TransferForm = ({ fixedProduct, locations, onSuccess }: TransferFor
         />
         {fromId && sourceOnHand != null && (
           <p
-            className={`text-[11px] mt-1.5 ${
-              sourceOnHand < 0 ? 'text-red-500 font-semibold' : 'text-[#999999]'
+            className={`mt-2 text-sm font-bold leading-5 ${
+              sourceOnHand < 0
+                ? 'text-red-600 underline decoration-red-500/50'
+                : 'text-[#666666] dark:text-zinc-300'
             }`}
           >
             On hand at source: {sourceOnHand < 0 ? `${sourceOnHand} (needs transfer record)` : sourceOnHand}

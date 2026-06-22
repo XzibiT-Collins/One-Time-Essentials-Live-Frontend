@@ -16,7 +16,7 @@ import { Checkbox } from '../components/Checkbox';
 import { useDebounce } from '../hooks/useDebounce';
 import { Box } from 'lucide-react';
 
-const CURRENCIES: Currency[] = [Currency.USD, Currency.EUR, Currency.GBP, Currency.GHS];
+const CURRENCIES: Currency[] = [Currency.GHS];
 
 const emptyForm = {
   isNewProduct: true,
