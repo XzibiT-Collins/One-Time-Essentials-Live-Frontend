@@ -54,6 +54,7 @@ import { StorageLocationManagement } from './pages/StorageLocationManagement';
 import { StockTransfers } from './pages/StockTransfers';
 import { ItemsSoldReport } from './pages/ItemsSoldReport';
 import { ProductSalesDetail } from './pages/ProductSalesDetail';
+import { StockConversion } from './pages/StockConversion';
 
 export default function App() {
   return (
@@ -97,6 +98,7 @@ export default function App() {
                   <Route path="/admin/customers" element={<CustomerManagement />} />
                   <Route path="/admin/customers/:id" element={<CustomerDetails />} />
                   <Route path="/admin/inventory/transfers" element={<StockTransfers />} />
+                  <Route path="/admin/inventory/conversions" element={<StockConversion />} />
                 </Route>
 
                 {/* Admin Only Routes */}

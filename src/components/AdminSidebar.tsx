@@ -32,6 +32,7 @@ const menuItems = [
   { icon: Tag, label: 'Categories', path: '/admin/categories' },
   { icon: Warehouse, label: 'Storage Locations', path: '/admin/inventory/locations' },
   { icon: ArrowLeftRight, label: 'Stock Transfers', path: '/admin/inventory/transfers' },
+  { icon: ArrowLeftRight, label: 'Stock Conversions', path: '/admin/inventory/conversions' },
   { icon: ShoppingCart, label: 'Orders', path: '/admin/orders' },
   { icon: ShoppingCart, label: 'Walk-In Orders', path: '/admin/walk-in' },
   { icon: Ticket, label: 'Coupons', path: '/admin/coupons' },

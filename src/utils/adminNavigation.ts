@@ -27,7 +27,8 @@ export const getVisibleAdminMenuItems = <T extends AdminMenuItem>(
     // Paths a front-desk user may see, each gated by the permission it requires.
     const frontDeskAllowed: Record<string, string> = {
       '/admin/walk-in': 'WALK_IN_ORDER_VIEW',
-      '/admin/inventory/transfers': 'PRODUCT_VIEW_STOCK_SUMMARY',
+      '/admin/inventory/transfers': 'STOCK_TRANSFER',
+      '/admin/inventory/conversions': 'STOCK_CONVERSION',
     };
     return menuItems.filter(
       (item) => item.path in frontDeskAllowed && hasPermission(frontDeskAllowed[item.path])
