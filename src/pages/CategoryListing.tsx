@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, LayoutDashboard } from 'lucide-react';
 import { categoryService } from '../services/categoryService';
 import type { CategoryResponse } from '../types';
 
@@ -33,12 +33,9 @@ export const CategoryListing = () => {
               to={`/products?category=${cat.categoryId}`}
               className="group relative block aspect-[16/9] overflow-hidden rounded-[2.5rem] bg-[#B8E0F7] dark:bg-zinc-900 card-shadow"
             >
-              <img
-                src={`https://picsum.photos/seed/${cat.slug}/1200/800`}
-                alt={cat.categoryName}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-              />
+              <div className="absolute inset-0 bg-[#F5F5F5] dark:bg-zinc-800 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
+                <LayoutDashboard className="h-32 w-32 text-zinc-300 dark:text-zinc-700" />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               <div className="absolute bottom-10 left-10 text-white">
                 <h3 className="text-3xl font-bold mb-2">{cat.categoryName}</h3>
