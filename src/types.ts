@@ -329,6 +329,7 @@ export interface InventoryMovementResponse {
   referenceType: string;
   referenceId: string;
   note: string;
+  recordedBy?: string;
   createdAt: string;
 }
 

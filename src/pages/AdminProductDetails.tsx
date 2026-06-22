@@ -499,6 +499,7 @@ export const AdminProductDetails = () => {
             <thead className="text-xs font-bold uppercase tracking-widest text-[#999999] border-b border-zinc-100 dark:border-zinc-800">
               <tr>
                 <th className="px-4 py-3">Type</th>
+                <th className="px-4 py-3">By</th>
                 <th className="px-4 py-3">Qty</th>
                 <th className="px-4 py-3">Cost</th>
                 <th className="px-4 py-3">Price</th>
@@ -518,6 +519,7 @@ export const AdminProductDetails = () => {
                       {move.movementType}
                     </span>
                   </td>
+                  <td className="px-4 py-3 text-xs">{move.recordedBy || '—'}</td>
                   <td className="px-4 py-3 font-bold">{move.quantity > 0 ? `+${move.quantity}` : move.quantity}</td>
                   <td className="px-4 py-3">{move.unitCost}</td>
                   <td className="px-4 py-3">{move.unitSellingPrice}</td>
@@ -530,7 +532,7 @@ export const AdminProductDetails = () => {
               ))}
               {inventoryHistory.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-4 py-8 text-center text-zinc-500">No inventory movements recorded</td>
+                  <td colSpan={7} className="px-4 py-8 text-center text-zinc-500">No inventory movements recorded</td>
                 </tr>
               )}
             </tbody>
