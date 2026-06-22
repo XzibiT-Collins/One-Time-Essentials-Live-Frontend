@@ -1102,3 +1102,59 @@ export interface SalesAnalyticsResponse {
   miniStats: MiniStatResponse[];
   orderStatus: OrderStatusSliceResponse[];
 }
+
+export type SalesSource = 'ALL' | 'WALK_IN' | 'ONLINE';
+
+export interface LocationStockEntry {
+  locationId: number;
+  locationName: string;
+  quantityOnHand: number;
+}
+
+export interface SoldProductSummary {
+  productId: number;
+  productName: string;
+  sku: string;
+  imageUrl: string | null;
+  quantitySold: number;
+  totalAmount: number;
+  remainingStockGlobal: number;
+  remainingByLocation: LocationStockEntry[];
+}
+
+export interface ItemsSoldReportResponse {
+  from: string;
+  to: string;
+  source: SalesSource;
+  products: PageResponse<SoldProductSummary>;
+  overallQuantitySold: number;
+  overallAmountSold: number;
+  currency: string;
+}
+
+export interface SaleLineResponse {
+  dateOfSale: string;
+  quantity: number;
+  soldBy: string;
+  channel: 'WALK_IN' | 'ONLINE';
+  locationName: string | null;
+  balanceAfterAtLocation: number | null;
+  referenceId: string;
+  amount: number;
+}
+
+export interface ProductSalesDetailResponse {
+  productId: number;
+  productName: string;
+  sku: string;
+  imageUrl: string | null;
+  remainingStockGlobal: number;
+  remainingByLocation: LocationStockEntry[];
+  from: string;
+  to: string;
+  source: SalesSource;
+  sales: PageResponse<SaleLineResponse>;
+  totalQuantitySold: number;
+  totalAmountSold: number;
+  currency: string;
+}

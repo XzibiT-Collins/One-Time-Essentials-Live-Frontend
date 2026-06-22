@@ -101,14 +101,16 @@ export function AdminTable<T>({
               {columns.map((col, i) => (
                 <th key={i} className="px-8 py-4 whitespace-nowrap">{col.header}</th>
               ))}
-              <th className="px-8 py-4 text-right whitespace-nowrap">Actions</th>
+              {(onEdit || onDelete) && (
+                <th className="px-8 py-4 text-right whitespace-nowrap">Actions</th>
+              )}
             </tr>
           </thead>
           <tbody className="divide-y divide-[#F5F5F5] dark:divide-zinc-800">
             {isLoading ? (
               Array.from({ length: 3 }).map((_, i) => (
                 <tr key={i}>
-                  <td colSpan={columns.length + 1} className="px-8 py-4">
+                  <td colSpan={columns.length + (onEdit || onDelete ? 1 : 0)} className="px-8 py-4">
                     <div className="h-5 bg-[#B8E0F7] dark:bg-zinc-800 rounded animate-pulse" />
                   </td>
                 </tr>
@@ -122,20 +124,22 @@ export function AdminTable<T>({
                       : (item[col.accessor] as React.ReactNode)}
                   </td>
                 ))}
-                <td className="px-8 py-4 text-right whitespace-nowrap">
-                  <div className="flex justify-end gap-2">
-                    {onEdit && (
-                      <Button variant="ghost" size="icon" onClick={() => onEdit(item)}>
-                        <Edit className="h-4 w-4 text-[#666666] dark:text-zinc-400" />
-                      </Button>
-                    )}
-                    {onDelete && (
-                      <Button variant="ghost" size="icon" onClick={() => onDelete(item)}>
-                        <Trash2 className="h-4 w-4 text-red-500" />
-                      </Button>
-                    )}
-                  </div>
-                </td>
+                {(onEdit || onDelete) && (
+                  <td className="px-8 py-4 text-right whitespace-nowrap">
+                    <div className="flex justify-end gap-2">
+                      {onEdit && (
+                        <Button variant="ghost" size="icon" onClick={() => onEdit(item)}>
+                          <Edit className="h-4 w-4 text-[#666666] dark:text-zinc-400" />
+                        </Button>
+                      )}
+                      {onDelete && (
+                        <Button variant="ghost" size="icon" onClick={() => onDelete(item)}>
+                          <Trash2 className="h-4 w-4 text-red-500" />
+                        </Button>
+                      )}
+                    </div>
+                  </td>
+                )}
               </tr>
             ))}
           </tbody>

@@ -37,6 +37,7 @@ const menuItems = [
   { icon: Ticket, label: 'Coupons', path: '/admin/coupons' },
   { icon: PercentCircle, label: 'Shop Discount', path: '/admin/shop-discount' },
   { icon: Users, label: 'Customers', path: '/admin/customers' },
+  { icon: Receipt, label: 'Items Sold', path: '/admin/reports/items-sold' },
   { icon: Receipt, label: 'Taxes', path: '/admin/taxes' },
   { icon: Calculator, label: 'Accounting', path: '/admin/accounting' },
   { icon: BookOpen, label: 'Bookkeeping', path: '/admin/bookkeeping' },

@@ -52,6 +52,8 @@ import { AdminHomeRedirect } from './components/AdminHomeRedirect';
 import { ShopWideDiscountManagement } from './pages/ShopWideDiscountManagement';
 import { StorageLocationManagement } from './pages/StorageLocationManagement';
 import { StockTransfers } from './pages/StockTransfers';
+import { ItemsSoldReport } from './pages/ItemsSoldReport';
+import { ProductSalesDetail } from './pages/ProductSalesDetail';
 
 export default function App() {
   return (
@@ -113,6 +115,8 @@ export default function App() {
                   <Route path="/admin/front-desk/users/:userId/permissions" element={<FrontDeskUserPermissions />} />
                   <Route path="/admin/shop-discount" element={<ShopWideDiscountManagement />} />
                   <Route path="/admin/inventory/locations" element={<StorageLocationManagement />} />
+                  <Route path="/admin/reports/items-sold" element={<ItemsSoldReport />} />
+                  <Route path="/admin/reports/items-sold/:productId" element={<ProductSalesDetail />} />
                 </Route>
               </Routes>
             </Layout>
