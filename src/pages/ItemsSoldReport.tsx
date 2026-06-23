@@ -114,6 +114,10 @@ export const ItemsSoldReport = () => {
         </div>
       )
     },
+    {
+      header: 'Low Stock Threshold',
+      accessor: (p: SoldProductSummary) => p.lowStockThreshold
+    },
   ];
 
   return (

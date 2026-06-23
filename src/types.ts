@@ -1122,6 +1122,7 @@ export interface SoldProductSummary {
   quantitySold: number;
   totalAmount: number;
   remainingStockGlobal: number;
+  lowStockThreshold: number;
   remainingByLocation: LocationStockEntry[];
 }
 
