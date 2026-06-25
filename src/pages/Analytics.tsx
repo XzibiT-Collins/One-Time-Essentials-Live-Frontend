@@ -525,20 +525,20 @@ export const Analytics = () => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-white dark:bg-zinc-900 p-8 rounded-[2.5rem] card-shadow border border-[#F5F5F5] dark:border-zinc-800"
+            className="bg-white dark:bg-zinc-900 p-8 rounded-[2.5rem] card-shadow border border-[#F5F5F5] dark:border-zinc-800 flex flex-col h-full"
           >
             <div className="flex items-center gap-2 mb-8">
               <AlertCircle className="h-5 w-5 text-amber-500" />
               <h3 className="text-lg font-bold dark:text-white">Low Stock Alert</h3>
             </div>
             {isLoadingLowStock ? (
-              <div className="h-[250px] py-8 text-center text-zinc-500"><EmptyState icon={<Clock className="w-8 h-8 text-[#999999] dark:text-zinc-500" />} title="Loading stock products..." /></div>
+              <div className="flex-1 flex items-center justify-center py-8 text-center text-zinc-500"><EmptyState icon={<Clock className="w-8 h-8 text-[#999999] dark:text-zinc-500" />} title="Loading stock products..." /></div>
             ) : !lowStockProducts || lowStockProducts.length === 0 ? (
-              <div className="h-[250px]">
+              <div className="flex-1 flex items-center justify-center">
                 <EmptyState icon={<AlertCircle className="w-8 h-8 text-[#999999] dark:text-zinc-500" />} title="Stock Levels Good" description="No products are currently running low on stock." />
               </div>
             ) : (
-              <div className="space-y-6 overflow-x-auto overflow-y-auto max-h-[350px] pr-2 pb-2 custom-scrollbar">
+              <div className="space-y-6 overflow-x-auto overflow-y-auto flex-1 min-h-0 pr-2 pb-2 custom-scrollbar mask-bottom-fade" style={{ maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)' }}>
                 {lowStockProducts.map((p) => (
                   <div key={p.id} className="flex justify-between items-center p-4 bg-[#FDFBFB] dark:bg-zinc-950 rounded-2xl border border-[#F5F5F5] dark:border-zinc-800">
                     <div className="flex items-center gap-3">
