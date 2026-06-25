@@ -199,6 +199,11 @@ export const WalkInOrderCreation = () => {
           toast.error(`Split amounts (${totalSplit.toFixed(2)}) must equal total (${total.toFixed(2)})`);
           return;
        }
+    } else {
+       if (Number(amountPaid) < total - 0.01) {
+          toast.error(`Amount collected cannot be less than the grand total.`);
+          return;
+       }
     }
 
     setIsSubmitting(true);
@@ -206,7 +211,7 @@ export const WalkInOrderCreation = () => {
       const request: WalkInOrderRequest = {
         items: cart.map((item) => ({ productId: item.productId, quantity: item.quantity })),
         paymentMethod,
-        amountPaid: Number(amountPaid),
+        amountPaid: total,
         discountType: discountType || undefined,
         discountValue: discountType ? Number(discountValue) : undefined,
         registeredUserId: customerMode === 'REGISTERED' ? registeredCustomer?.id : undefined,
@@ -568,14 +573,22 @@ export const WalkInOrderCreation = () => {
                     />
 
                     {paymentMethod !== WalkInPaymentMethod.SPLIT ? (
-                       <Input 
-                          label="Amount Paid" 
-                          type="number" 
-                          step="0.01" 
-                          value={amountPaid} 
-                          onChange={(e) => setAmountPaid(e.target.value)} 
-                          required
-                       />
+                       <div className="space-y-4">
+                         <Input 
+                            label="Amount Collected" 
+                            type="number" 
+                            step="0.01" 
+                            value={amountPaid} 
+                            onChange={(e) => setAmountPaid(e.target.value)} 
+                            required
+                         />
+                         {changeGiven > 0 && (
+                           <div className="p-4 bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/20 rounded-xl flex justify-between items-center">
+                             <span className="text-sm font-medium text-green-800 dark:text-green-400">Change to Give:</span>
+                             <span className="text-lg font-bold text-green-600 dark:text-green-500">{formatPrice(changeGiven)}</span>
+                           </div>
+                         )}
+                       </div>
                     ) : (
                       <div className="space-y-4 pt-2 border-t border-[#F5F5F5] dark:border-zinc-800">
                           <Input 
