@@ -4,6 +4,7 @@ import { ArrowRight, ArrowLeftRight } from 'lucide-react';
 import { AdminTable } from '../components/AdminTable';
 import { Badge } from '../components/Badge';
 import { Dropdown } from '../components/Dropdown';
+import { Modal } from '../components/Modal';
 import { ProductPicker } from '../components/ProductPicker';
 import { TransferForm } from '../components/TransferForm';
 import locationInventoryService from '../services/locationInventoryService';
@@ -42,6 +43,7 @@ export const StockTransfers = () => {
 
   const [filterLocationId, setFilterLocationId] = useState('');
   const [filterProduct, setFilterProduct] = useState<ProductListing | null>(null);
+  const [isTransferModalOpen, setIsTransferModalOpen] = useState(false);
 
   const activeLocations = locations.filter((l) => l.active);
 
@@ -132,25 +134,31 @@ export const StockTransfers = () => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-7xl mx-auto space-y-8">
-      <div className="flex items-center gap-3">
-        <div className="h-11 w-11 rounded-2xl bg-accent/20 flex items-center justify-center text-accent-dark">
-          <ArrowLeftRight className="h-5 w-5" />
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="h-11 w-11 rounded-2xl bg-accent/20 flex items-center justify-center text-accent-dark">
+            <ArrowLeftRight className="h-5 w-5" />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-[#1A1A1A] dark:text-white">Stock Transfers</h1>
+            <p className="text-sm text-[#666666] dark:text-zinc-400 mt-0.5">
+              Record physical moves of stock between locations and review the transfer log.
+            </p>
+          </div>
         </div>
-        <div>
-          <h1 className="text-2xl font-bold text-[#1A1A1A] dark:text-white">Stock Transfers</h1>
-          <p className="text-sm text-[#666666] dark:text-zinc-400 mt-0.5">
-            Record physical moves of stock between locations and review the transfer log.
-          </p>
-        </div>
+        <button
+          onClick={() => setIsTransferModalOpen(true)}
+          className="px-6 py-3 bg-[#1A1A1A] dark:bg-white text-white dark:text-[#1A1A1A] font-bold rounded-xl shadow-lg hover:opacity-90 transition-opacity whitespace-nowrap text-sm"
+        >
+          Record Transfer
+        </button>
       </div>
 
-      {/* Record transfer */}
-      <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 shadow-sm border border-black/5 dark:border-white/5">
-        <h2 className="text-lg font-bold dark:text-white mb-6">Record a Transfer</h2>
+      <Modal isOpen={isTransferModalOpen} onClose={() => setIsTransferModalOpen(false)} title="Record a Transfer">
         <div className="max-w-2xl">
-          <TransferForm locations={activeLocations} onSuccess={() => loadLog()} />
+          <TransferForm locations={activeLocations} onSuccess={() => { loadLog(); setIsTransferModalOpen(false); }} />
         </div>
-      </div>
+      </Modal>
 
       {/* Transfer log */}
       <AdminTable

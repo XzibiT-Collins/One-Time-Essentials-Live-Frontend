@@ -69,22 +69,22 @@ export function AdminTable<T>({
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full lg:w-auto">
           {filterNodes}
-          <div className="relative flex-1 sm:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999]" />
-            <input
-              type="text"
-              placeholder={searchPlaceholder}
-              className="w-full pl-10 pr-4 py-2 bg-[#B8E0F7] dark:bg-zinc-800 border-none rounded-xl text-sm focus:ring-1 focus:ring-[#1A1A1A] dark:focus:ring-accent dark:text-white"
-              onChange={(e) => {
-                if (onSearch) onSearch(e.currentTarget.value);
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && onSearch) {
-                  onSearch(e.currentTarget.value);
-                }
-              }}
-            />
-          </div>
+          {onSearch && (
+            <div className="relative flex-1 sm:w-64">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#999999]" />
+              <input
+                type="text"
+                placeholder={searchPlaceholder}
+                className="w-full pl-10 pr-4 py-2 bg-[#B8E0F7] dark:bg-zinc-800 border-none rounded-xl text-sm focus:ring-1 focus:ring-[#1A1A1A] dark:focus:ring-accent dark:text-white"
+                onChange={(e) => onSearch(e.currentTarget.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    onSearch(e.currentTarget.value);
+                  }
+                }}
+              />
+            </div>
+          )}
           {onAdd && (
             <Button size="sm" onClick={onAdd}>
               <Plus className="h-4 w-4 mr-2" />

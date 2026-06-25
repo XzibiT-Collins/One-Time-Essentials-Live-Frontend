@@ -35,7 +35,7 @@ const emptyForm = {
   lowStockThreshold: '',
   categoryId: '',
   isActive: true,
-  isEnlisted: true,
+  isEnlisted: false,
   isFeatured: false,
   productImage: null as File | null,
 };
@@ -188,7 +188,9 @@ export const ProductManagement = () => {
     fd.append('productDescription', formData.productDescription);
     fd.append('currency', formData.currency);
     fd.append('sellingPrice', formData.sellingPrice);
-    fd.append('stockQuantity', formData.stockQuantity);
+    if (!formData.isNewProduct) {
+      fd.append('stockQuantity', formData.stockQuantity);
+    }
     if (formData.lowStockThreshold) fd.append('lowStockThreshold', formData.lowStockThreshold);
     fd.append('categoryId', formData.categoryId);
     fd.append('isActive', String(formData.isActive));
@@ -456,7 +458,7 @@ export const ProductManagement = () => {
           )}
 
           <Input label="Short Description" value={formData.shortDescription}
-            onChange={(e) => setField('shortDescription', e.target.value)} required />
+            onChange={(e) => setField('shortDescription', e.target.value)} />
           <div>
             <label className="block text-xs font-bold uppercase tracking-widest text-[#999999] mb-2">
               Full Description
@@ -465,7 +467,6 @@ export const ProductManagement = () => {
               className="w-full px-4 py-3 bg-[#B8E0F7] dark:bg-zinc-800 dark:text-white rounded-xl text-sm border-none focus:ring-1 focus:ring-accent min-h-[80px] outline-none custom-scrollbar"
               value={formData.productDescription}
               onChange={(e) => setField('productDescription', e.target.value)}
-              required
             />
           </div>
 
@@ -527,20 +528,20 @@ export const ProductManagement = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="relative">
-              <Input 
-                label="Stock Quantity" 
-                type="number" 
-                value={formData.stockQuantity}
-                onChange={(e) => setField('stockQuantity', e.target.value)} 
-                required 
-                readOnly={!!editingProduct}
-                className={!!editingProduct ? 'bg-zinc-100 dark:bg-zinc-900 cursor-not-allowed' : ''}
-              />
-              {!!editingProduct && (
+            {!!editingProduct && (
+              <div className="relative">
+                <Input 
+                  label="Stock Quantity" 
+                  type="number" 
+                  value={formData.stockQuantity}
+                  onChange={(e) => setField('stockQuantity', e.target.value)} 
+                  required 
+                  readOnly={true}
+                  className="bg-zinc-100 dark:bg-zinc-900 cursor-not-allowed"
+                />
                 <p className="text-[10px] text-[#999999] mt-1">Managed via inventory actions</p>
-              )}
-            </div>
+              </div>
+            )}
             <Input label="Low Stock Threshold" type="number" value={formData.lowStockThreshold}
               onChange={(e) => setField('lowStockThreshold', e.target.value)} />
           </div>

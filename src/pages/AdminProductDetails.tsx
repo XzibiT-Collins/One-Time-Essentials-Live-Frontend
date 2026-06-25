@@ -294,8 +294,8 @@ export const AdminProductDetails = () => {
             label="Quantity" 
             type="number" 
             min="1" 
-            value={receiptForm.quantity} 
-            onChange={(e) => setReceiptForm({ ...receiptForm, quantity: Number(e.target.value) })} 
+            value={receiptForm.quantity || ''} 
+            onChange={(e) => setReceiptForm({ ...receiptForm, quantity: e.target.value === '' ? '' as unknown as number : Number(e.target.value) })} 
             required 
           />
           <Input 
@@ -364,8 +364,8 @@ export const AdminProductDetails = () => {
             label="Quantity" 
             type="number" 
             min="1" 
-            value={adjustmentForm.quantity} 
-            onChange={(e) => setAdjustmentForm({ ...adjustmentForm, quantity: Number(e.target.value) })} 
+            value={adjustmentForm.quantity || ''} 
+            onChange={(e) => setAdjustmentForm({ ...adjustmentForm, quantity: e.target.value === '' ? '' as unknown as number : Number(e.target.value) })} 
             required 
           />
           <Input 
@@ -421,7 +421,7 @@ export const AdminProductDetails = () => {
   );
 
   const renderSummaryModal = () => (
-    <Modal isOpen={isSummaryModalOpen} onClose={() => setIsSummaryModalOpen(false)} title="Inventory Summary" size="lg">
+    <Modal isOpen={isSummaryModalOpen} onClose={() => setIsSummaryModalOpen(false)} title="Inventory Summary" size="fit">
       {isInventoryLoading ? (
         <div className="h-64 flex items-center justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
@@ -470,7 +470,7 @@ export const AdminProductDetails = () => {
                         </span>
                         {layer.sourceReference}
                       </td>
-                      <td className="px-4 py-3">{new Date(layer.receivedAt).toLocaleDateString()}</td>
+                      <td className="px-4 py-3">{new Date(layer.receivedAt).toLocaleString(undefined, { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</td>
                     </tr>
                   ))}
                   {inventorySummary.layers.length === 0 && (
@@ -488,7 +488,7 @@ export const AdminProductDetails = () => {
   );
 
   const renderHistoryModal = () => (
-    <Modal isOpen={isHistoryModalOpen} onClose={() => setIsHistoryModalOpen(false)} title="Inventory History" size="lg">
+    <Modal isOpen={isHistoryModalOpen} onClose={() => setIsHistoryModalOpen(false)} title="Inventory History" size="fit">
       {isInventoryLoading ? (
         <div className="h-64 flex items-center justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
@@ -527,7 +527,7 @@ export const AdminProductDetails = () => {
                     <p className="text-xs font-bold">{move.referenceType}</p>
                     <p className="text-[10px] opacity-70">{move.referenceId}</p>
                   </td>
-                  <td className="px-4 py-3">{new Date(move.createdAt).toLocaleString()}</td>
+                  <td className="px-4 py-3">{new Date(move.createdAt).toLocaleString(undefined, { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</td>
                 </tr>
               ))}
               {inventoryHistory.length === 0 && (
@@ -622,7 +622,7 @@ export const AdminProductDetails = () => {
       isOpen={isTransferHistoryOpen}
       onClose={() => setIsTransferHistoryOpen(false)}
       title="Transfer History"
-      size="lg"
+      size="fit"
     >
       {isTransferHistoryLoading ? (
         <div className="h-64 flex items-center justify-center">
@@ -668,7 +668,7 @@ export const AdminProductDetails = () => {
                       </span>
                     </td>
                     <td className="px-4 py-3 text-xs">{t.movedByName}</td>
-                    <td className="px-4 py-3 text-xs">{new Date(t.createdAt).toLocaleString()}</td>
+                    <td className="px-4 py-3 text-xs">{new Date(t.createdAt).toLocaleString(undefined, { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</td>
                   </tr>
                 ))}
                 {transferHistory.length === 0 && (
